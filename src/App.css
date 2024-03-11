@@ -1,0 +1,113 @@
+
+
+body {
+  font-family: "Dosis", sans-serif; 
+  margin: 0;
+  padding: 0;
+  background-color: #dad5d5;
+}
+
+.search-container {
+  position: relative;
+  left: 10%;
+  padding: 2rem;
+}
+
+.search-nav {
+position: relative;
+width: 75%;
+height: 4rem;
+border-radius: 20px;
+border: none;
+font-size: 2rem;
+padding-left: 50px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 4%;
+  top: 40%;
+  font-size: 1.5rem;
+}
+
+.search-btn {
+  position: absolute;
+  right: 23%;
+  top: 32%;
+  border-radius: 10px;
+  height: 3rem;
+  width: 6rem;
+  background-color: #2557a7;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+h1 {
+  margin-top: 0;
+  background-color: #ffc107; 
+  padding: 10px;
+  padding-left: 2rem;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: white;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.job-list {
+  padding: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.job-item {
+  display: flex;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-left: 10px solid #ffc107;
+  border-radius: 20px; 
+}
+
+.job-title {
+  font-size: 2rem;
+}
+
+.job-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 20px;
+}
+
+.job-logo {
+  height: 8rem;
+}
+
+.job-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  right: 7%;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .job-list {
+    width: 95%;
+  }
+}
