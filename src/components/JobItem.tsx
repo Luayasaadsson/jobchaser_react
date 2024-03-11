@@ -28,7 +28,7 @@ function JobItem({ company, logo, position, ...rest }: JobItemProps): JSX.Elemen
 
   return (
     <li className="job-item">
-<img src={`/public${logo}`} alt={`Logotyp för ${company}`} className="job-logo" />
+<img src={`/${logo}`} alt={`Logotyp för ${company}`} className="job-logo" />
       <div className="job-info">
         <h2>{company}</h2>
         <p>{position}</p>
