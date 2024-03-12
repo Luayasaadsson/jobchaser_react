@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './App.css';
+import './css/App.css';
+import './css/media.css';
 import JobList from './components/JobList'; 
 import Search from './components/search'; 
 
