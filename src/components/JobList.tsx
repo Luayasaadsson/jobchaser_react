@@ -15,7 +15,11 @@ interface Job {
   postedAt: string;
 }
 
-function JobList() {
+interface JobListProps {
+  searchTerm: string;
+}
+
+function JobList({ searchTerm }: JobListProps): JSX.Element {
   const [jobs, setJobs] = useState<Job[]>([]);
 
   useEffect(() => {
@@ -25,10 +29,16 @@ function JobList() {
       .catch(error => console.error('Error fetching jobs:', error));
   }, []);
 
+  const filteredJobs = jobs.filter(job => {
+    return Object.values(job).some(value =>
+      typeof value === 'string' && value.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  });
+
   return (
     <ul className="job-list">
-      {jobs.length > 0 ? (
-        jobs.map(job => <JobItem key={job.id} {...job} />)
+      {filteredJobs.length > 0 ? (
+        filteredJobs.map(job => <JobItem key={job.id} {...job} />)
       ) : (
         <li>Inga jobb tillgängliga.</li>
       )}

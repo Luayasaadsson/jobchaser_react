@@ -1,16 +1,22 @@
-/* import React from 'react'; */
+import { useState } from 'react';
 import './App.css';
 import JobList from './components/JobList'; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Search from './components/search'; 
 
 function App(): JSX.Element {
+  const [searchTerm, setSearchTerm] = useState<string>('');
+
+  // Funktion för att hantera sökning och uppdatera söktermen.
+  const handleSearch = (searchTerm: string) => {
+    setSearchTerm(searchTerm); // Uppdaterar söktermen när användaren söker.
+  };
+
   return (
     <div className="App">
       <Header />
-      <Search />
+      <Search onSearch={handleSearch} />
       <main>
-        <JobList />
+      <JobList searchTerm={searchTerm} />
       </main>
     </div>
   );
@@ -19,16 +25,6 @@ function App(): JSX.Element {
 function Header() {
   return (
     <h1>JobChaser</h1>
-  )
-}
-
-function Search(): JSX.Element {
-  return (
-    <div className="search-container">
-      <input className='search-nav' type="text" placeholder='Jobbtitel, nyckelord eller företag' />
-      <FontAwesomeIcon icon={faSearch} className="search-icon" />
-      <button className='search-btn'>Sök jobb</button>
-    </div>
   )
 }
 
