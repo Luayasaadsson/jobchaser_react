@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import JobItem from './JobItem';
+import Loader from '../Loader';
 
 interface Job {
   id: string;
@@ -20,13 +21,20 @@ interface JobListProps {
 }
 
 function JobList({ searchTerm }: JobListProps): JSX.Element {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [jobs, setJobs] = useState<Job[]>([]);
 
   useEffect(() => {
     fetch('/jobs_data.json')
       .then(response => response.json())
-      .then(data => setJobs(data))
-      .catch(error => console.error('Error fetching jobs:', error));
+      .then(data => {
+        setJobs(data);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching jobs:', error);
+        setIsLoading(false);
+      });
   }, []);
 
   const filteredJobs = jobs.filter(job => {
@@ -34,6 +42,10 @@ function JobList({ searchTerm }: JobListProps): JSX.Element {
       typeof value === 'string' && value.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <ul className="job-list">
