@@ -2,16 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  font-family: "Dosis", sans-serif; 
+* {
+  padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Dosis", sans-serif; 
+  max-width: 70%;
+  margin: 0 auto;
   padding: 0;
   background-color: #edeaea;
 }
 
 .search-container {
+  display: flex;
+  align-items: center;
   position: relative;
-  left: 10%;
+  left: 7%;
   padding: 2rem;
 }
 
@@ -19,25 +28,23 @@
 position: relative;
 width: 76%;
 height: 4rem;
-border-radius: 20px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
 border: none;
 font-size: 2rem;
-padding-left: 50px;
+padding-left: 30px;
+font-size: 1.2rem;
 }
 
 .search-icon {
   position: absolute;
-  left: 3%;
-  top: 40%;
   font-size: 1.5rem;
 }
 
 .search-btn {
-  position: absolute;
-  right: 22%;
-  top: 32%;
-  border-radius: 10px;
-  height: 3rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 4rem;
   width: 6rem;
   background-color: #2557a7;
   color: white;
@@ -60,11 +67,12 @@ h1 {
 
 h2 {
   margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 p {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1rem;
   margin: 0;
   padding-left: 10px;
 }
@@ -76,6 +84,7 @@ p {
 }
 
 .job-item {
+  position: relative;
   display: flex;
   background-color: #ffffff;
   margin-bottom: 20px;
@@ -104,7 +113,7 @@ p {
   border: none;
   font-size: 2rem;
   position: absolute;
-  right: 7%;
+  right: 3%;
   margin-top: 35px;
   cursor: pointer;
-} */
+}
