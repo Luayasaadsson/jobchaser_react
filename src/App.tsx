@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './css/App.css';
-import './css/media.css';
+import './index.css';
+/* import './css/media.css'; */
 import JobList from './components/JobList'; 
 import Search from './components/search'; 
 
@@ -25,7 +25,7 @@ function App(): JSX.Element {
 
 function Header() {
   return (
-    <h1>JobChaser</h1>
+    <h1 className="text-4xl font-medium underline bg-lime-50">JobChaser</h1>
   )
 }
 

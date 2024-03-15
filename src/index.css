@@ -1,6 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-body {
+/* body {
   font-family: "Dosis", sans-serif; 
   margin: 0;
   padding: 0;
@@ -105,4 +107,4 @@ p {
   right: 7%;
   margin-top: 35px;
   cursor: pointer;
-}
+} */
