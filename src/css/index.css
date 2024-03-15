@@ -61,8 +61,8 @@ h1 {
   font-family: "Charm", cursive;
   font-weight: 700;
   font-size: 3rem;
-  color: white;
-  border-bottom: 1px solid black;
+  color: #2557a7;
+  border-bottom: 1px solid #2557a7;
 }
 
 h2 {
@@ -90,7 +90,7 @@ p {
   margin-bottom: 20px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border-left: 10px solid #ffc107;
+  border-left: 10px solid #2557a7;
   border-radius: 20px; 
 }
 
