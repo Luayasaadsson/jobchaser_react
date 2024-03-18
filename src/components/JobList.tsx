@@ -5,17 +5,27 @@ import Loader from '../Loader';
 interface Job {
   id: string;
   headline: string;
-  logoUrl: string;
-  location: string;
-  applicationDeadline: string;
-  descriptionText: string;
-  applicationUrl: string;
-  duration: string;
-  occupations: string;
-  employer: string;
-  [key: string]: string;
+  logo_url: string;
+  workplace_address: {
+    municipality: string;
+  };
+  application_deadline: string;
+  description: {
+    text: string;
+  };
+  application_details: {
+    url: string;
+  };
+  duration: {
+    label: string;
+  };
+  occupation: {
+    label: string;
+  };
+  employer: {
+    name: string;
+  };
 }
-
 
 interface JobListProps {
   searchTerm: string;
@@ -44,40 +54,44 @@ function JobList({ searchTerm }: JobListProps): JSX.Element {
     getData();
   }, []);
   
-  
-
   const filteredJobs = jobs.filter(job => (
-    Object.keys(job).some(key =>
-      typeof job[key] === 'string' && job[key].toLowerCase().includes(searchTerm.toLowerCase())
-    )
+    job.headline?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.employer?.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.description?.text?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.occupation?.label?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.workplace_address?.municipality?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (job.duration?.label?.toLowerCase().includes(searchTerm.toLowerCase()) || false) || 
+    (job.application_details?.url?.toLowerCase().includes(searchTerm.toLowerCase()) || false) 
   ));
+  
+  
 
   if (isLoading) {
     return <Loader />;
   }
 
- return (
-  <ul className="job-list">
-    {filteredJobs.length > 0 ? (
-      filteredJobs.map(job => (
-        <JobItem
-          key={job.id}
-          logoUrl={job.logo_url}
-          headline={job.headline}
-          location={job.workplace_address.municipality}
-          duration={job.duration.label}
-          employer={job.employer.name}
-          occupation={job.occupation.label}
-          applicationDeadline={job.application_deadline}
-          descriptionText={job.description.text}
-          applicationUrl={job.application_details.url}
-        />
-      ))
-    ) : (
-      <li>Inga jobb tillgängliga.</li>
-    )}
-  </ul>
-);
+  return (
+    <ul className="job-list">
+      {filteredJobs.length > 0 ? (
+        filteredJobs.map(job => (
+          <JobItem
+            key={job.id}
+            logoUrl={job.logo_url}
+            headline={job.headline}
+            location={job.workplace_address.municipality}
+            duration={job.duration.label}
+            employer={job.employer.name}
+            occupation={job.occupation.label}
+            applicationDeadline={job.application_deadline}
+            descriptionText={job.description.text}
+            applicationUrl={job.application_details.url}
+          />
+        ))
+      ) : (
+        <li>Inga jobb tillgängliga.</li>
+      )}
+    </ul>
+  );
 }
 
 export default JobList;
