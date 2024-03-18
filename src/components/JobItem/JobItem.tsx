@@ -37,23 +37,23 @@ function JobItem({
   const heartIcon: IconDefinition = isFavorite ? solidHeart : regularHeart;
 
   return (
+      <div className={JobItemCSS.jobcontainer}>
     <li className={JobItemCSS.jobitem}>
       <img src={logoUrl} className={JobItemCSS.joblogo} />
-      <div className={JobItemCSS.jobinfo}>
         <h2 className={JobItemCSS.jobheadline}>{headline}</h2>
         <br></br>
-        <p>Plats: {location}</p>
-        <p className={JobItemCSS.duration}><span className={JobItemCSS.jobdurationtitle}>Tjänst:</span> {duration}</p>
-        <p>{occupation}</p>
-        <p>{employer}</p>
-        <p>{new Date(applicationDeadline).toLocaleDateString()}</p>
-        <a href={applicationUrl} target="_blank" rel="noopener noreferrer">Ansök här</a>
-        <p className={JobItemCSS.jobdescription}><span className={JobItemCSS.jobdescriptiontitle}>Beskrivning:</span> <br></br>{descriptionText}</p> 
+        <p className={JobItemCSS.joblocation}>Plats: {location}</p>
+        <p className={JobItemCSS.jobduration}><span className={JobItemCSS.jobdurationtitle}>Tjänst:</span> {duration}</p>
+        <p className={JobItemCSS.jobemployer}>{employer}</p>
+        <p className={JobItemCSS.joboccupation}>{occupation}</p>
+        <p className={JobItemCSS.jobdate}>{new Date(applicationDeadline).toLocaleDateString()}</p>
+        <a className={JobItemCSS.applybtn} href={applicationUrl} target="_blank" rel="noopener noreferrer">Ansök här</a>
+        <p className={JobItemCSS.jobdescription}><span className={JobItemCSS.jobdescriptiontitle}>Beskrivning:</span> {descriptionText}</p> 
         <button className={JobItemCSS.jobbtn} onClick={toggleFavorite}>
           <FontAwesomeIcon icon={heartIcon} style={{ color: isFavorite ? 'red' : '' }} />
         </button>
-      </div>
     </li>
+      </div>
   );
 }
 

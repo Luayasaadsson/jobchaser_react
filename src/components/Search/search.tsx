@@ -43,7 +43,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
         onChange={handleInputChange}
         onKeyPress={handleKeyPress}
       />
-      <button className={SearchCSS.searchbtn} onClick={handleSearch}>Sök jobb</button>
+      <button className={SearchCSS.searchbtn} onClick={handleSearch}>Sök</button>
       <FontAwesomeIcon icon={faSearch} className={SearchCSS.searchicon} />
     </div>
   );
