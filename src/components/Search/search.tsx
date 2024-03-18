@@ -15,6 +15,12 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
     setSearchTerm(event.target.value);
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  }
+
   // Funktion för att hantera sökning när användaren klickar på sökknappen.
   const handleSearch = () => {
     onSearch(searchTerm);
@@ -35,6 +41,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
         placeholder='Jobbtitel, nyckelord eller företag'
         value={searchTerm}
         onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
       />
       <button className={SearchCSS.searchbtn} onClick={handleSearch}>Sök jobb</button>
       <FontAwesomeIcon icon={faSearch} className={SearchCSS.searchicon} />
