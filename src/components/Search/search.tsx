@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import SearchCSS from "./Search.module.css"
 
 interface SearchProps {
   onSearch: (searchTerm: string) => void; // Funktion för att hantera sökning.
@@ -27,16 +28,16 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   }, [searchTerm, onSearch]);
 
   return (
-    <div className="search-container">
+    <div className={SearchCSS.searchcontainer}>
       <input
-        className='search-nav'
+        className={SearchCSS.searchnav}
         type="text"
         placeholder='Jobbtitel, nyckelord eller företag'
         value={searchTerm}
         onChange={handleInputChange}
       />
-      <button className='search-btn' onClick={handleSearch}>Sök jobb</button>
-      <FontAwesomeIcon icon={faSearch} className="search-icon" />
+      <button className={SearchCSS.searchbtn} onClick={handleSearch}>Sök jobb</button>
+      <FontAwesomeIcon icon={faSearch} className={SearchCSS.searchicon} />
     </div>
   );
 }

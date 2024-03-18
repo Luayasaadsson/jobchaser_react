@@ -1,0 +1,55 @@
+.jobitem {
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-left: 10px solid #2557a7;
+  border-radius: 20px; 
+}
+
+.joblogo {
+  max-height: 4rem;
+  margin-top: 7rem;
+}
+
+.jobinfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 10px;
+}
+
+.jobheadline {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.jobdurationtitle {
+  font-weight: bold;
+}
+
+.jobduration {
+
+}
+
+.jobdescriptiontitle {
+  font-weight: bold;
+}
+
+.jobdescription {
+  width: 18rem;
+  max-height: 10rem;
+  overflow: auto;
+}
+
+.jobbtn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  right: 3%;
+  margin-top: 35px;
+  cursor: pointer;
+}

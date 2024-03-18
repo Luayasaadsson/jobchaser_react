@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import './css/index.css';
-import './css/media.css';
-import JobList from './components/JobList'; 
-import Search from './components/search'; 
+import { useState } from "react";
+import Header from "./Header/Header";
+import "./css/index.css";
+import "./css/media.css";
+import JobList from "./components/JobList/JobList";
+import Search from "./components/Search/search";
 
 function App(): JSX.Element {
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   // Funktion för att hantera sökning och uppdatera söktermen.
   const handleSearch = (searchTerm: string) => {
@@ -17,16 +18,10 @@ function App(): JSX.Element {
       <Header />
       <Search onSearch={handleSearch} />
       <main>
-      <JobList searchTerm={searchTerm} />
+        <JobList searchTerm={searchTerm} />
       </main>
     </div>
   );
-}
-
-function Header() {
-  return (
-    <h1>JobChaser</h1>
-  )
 }
 
 export default App;

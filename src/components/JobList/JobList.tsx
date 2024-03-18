@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
-import JobItem from './JobItem';
-import Loader from '../Loader';
+import { useState, useEffect } from "react";
+import JobItem from "../JobItem/JobItem";
+import Loader from "../../Loader";
+import JobListCSS from "./JobList.module.css"
 
 interface Job {
   id: string;
@@ -36,7 +37,8 @@ function JobList({ searchTerm }: JobListProps): JSX.Element {
   const [jobs, setJobs] = useState<Job[]>([]);
 
   const getData = async () => {
-    const url = 'https://jobsearch.api.jobtechdev.se/search?q=javascript&limit=100';
+    const url =
+      "https://jobsearch.api.jobtechdev.se/search?q=javascript&limit=100";
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -45,35 +47,39 @@ function JobList({ searchTerm }: JobListProps): JSX.Element {
       console.log(filteredJobs);
       setIsLoading(false);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
       setIsLoading(false);
     }
   };
-  
+
   useEffect(() => {
     getData();
   }, []);
-  
-  const filteredJobs = jobs.filter(job => (
-    job.headline?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.employer?.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.description?.text?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.occupation?.label?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.workplace_address?.municipality?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    (job.duration?.label?.toLowerCase().includes(searchTerm.toLowerCase()) || false) || 
-    (job.application_details?.url?.toLowerCase().includes(searchTerm.toLowerCase()) || false) 
-  ));
-  
-  
+
+  const filteredJobs = jobs.filter((job) =>
+      job.headline?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.employer?.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.description?.text?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.occupation?.label?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.workplace_address?.municipality
+        ?.toLowerCase()
+        .includes(searchTerm.toLowerCase()) ||
+      job.duration?.label?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      false ||
+      job.application_details?.url
+        ?.toLowerCase()
+        .includes(searchTerm.toLowerCase()) ||
+      false
+  );
 
   if (isLoading) {
     return <Loader />;
   }
 
   return (
-    <ul className="job-list">
+    <ul className={JobListCSS.joblist}>
       {filteredJobs.length > 0 ? (
-        filteredJobs.map(job => (
+        filteredJobs.map((job) => (
           <JobItem
             key={job.id}
             logoUrl={job.logo_url}

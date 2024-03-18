@@ -1,0 +1,37 @@
+.searchcontainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 7%;
+  padding: 2rem;
+}
+
+.searchnav {
+  position: relative;
+  width: 76%;
+  height: 4rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  font-size: 2rem;
+  padding-left: 30px;
+  font-size: 1.2rem;
+}
+
+.searchbtn {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 4rem;
+  width: 6rem;
+  background-color: #2557a7;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.searchicon {
+  position: absolute;
+  font-size: 1.5rem;
+}
+
