@@ -1,0 +1,41 @@
+.Navcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-left: 5rem;
+  background-color: #2557a7;
+  border-top-right-radius: 50px;
+  border-left: 20px solid #f27f05;
+  position: sticky;
+  top: 0; 
+  z-index: 1; 
+}
+
+.Jobchasetitle {
+  color: #ffffff;
+  background-color: #2557a7;
+  font-family: "Charm", cursive;
+  font-weight: 700;
+  font-size: 3rem;
+  border-bottom: 1px solid #ffffff;
+}
+
+.Navbuttons {
+  display: flex; 
+}
+
+.Navfavicon {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none; 
+  margin: 10px; 
+  font-size: 1.5rem;
+}
+
+.Navfaviconame {
+  font-size: 0.8rem;
+  margin-top: 8px;
+}

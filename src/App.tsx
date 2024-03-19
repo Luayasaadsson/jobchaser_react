@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./components/Header/Header";
+import Header from "./components/Nav/Nav";
 import "./css/index.css";
 import "./css/media.css";
 import JobList from "./components/JobList/JobList";

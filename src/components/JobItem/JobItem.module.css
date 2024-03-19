@@ -34,11 +34,14 @@
 
 .jobdurationtitle {
   margin: 5px;
-  font-weight: bold;
 }
 
 .jobduration {
-  font-weight: bold;
+  margin: 5px;
+  position: absolute;
+  right: 1.5%;
+  top: 36%;
+  text-align: center;
 }
 
 .jobdescriptiontitle {
@@ -61,8 +64,7 @@
   margin: 5px;
   position: absolute;
   right: 1.5%;
-  top: 38%;
-  font-weight: bold;
+  top: 30%;
 }
 
 .jobdescription {
@@ -78,21 +80,26 @@
   font-size: 2rem;
   position: absolute;
   right: 3%;
+  top: -5%;
   margin-top: 100px;
   cursor: pointer;
 }
 
 .applybtn {
   position: absolute;
-  right: 2%;
-  top: 45%;
+  right: 1%;
+  top: 48%;
   color: #ffffff;
   background-color: #2557a7;
   text-decoration: none;
   border-radius: 5px;
-  width: 80px;
-  height: 30px;
-  padding: 8px;
-  font-size: 0.8rem;
+  width: 120px;
+  height: 40px;
+  padding: 10px;
+  font-size: 1rem;
   text-align: center;
+}
+
+.applybtnicon {
+  padding-right: 8px;
 }

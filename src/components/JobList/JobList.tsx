@@ -61,16 +61,9 @@ function JobList({ searchTerm }: JobListProps): JSX.Element {
       job.employer?.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       job.description?.text?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       job.occupation?.label?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.workplace_address?.municipality
-        ?.toLowerCase()
-        .includes(searchTerm.toLowerCase()) ||
-      job.duration?.label?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      false ||
-      job.application_details?.url
-        ?.toLowerCase()
-        .includes(searchTerm.toLowerCase()) ||
-      false
-  );
+      job.workplace_address?.municipality?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.duration?.label?.toLowerCase().includes(searchTerm.toLowerCase()) || false || 
+      job.application_details?.url?.toLowerCase().includes(searchTerm.toLowerCase()) || false);
 
   if (isLoading) {
     return <Loader />;
