@@ -7,4 +7,5 @@
   /* border-top-left-radius:30px; */
   border-top-right-radius:30px;
   border-left: 20px solid #f27f05;
+  min-width: 800px;
 }
