@@ -4,6 +4,7 @@ import "./css/index.css";
 import "./css/media.css";
 import JobList from "./components/JobList/JobList";
 import Search from "./components/Search/search";
+import Footer from "./components/Footer/Footer"
 
 function App(): JSX.Element {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -20,6 +21,7 @@ function App(): JSX.Element {
       <main>
         <JobList searchTerm={searchTerm} />
       </main>
+      <Footer />
     </div>
   );
 }

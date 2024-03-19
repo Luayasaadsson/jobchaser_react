@@ -1,0 +1,10 @@
+.jobfooter {
+  color: #ffffff;
+  background-color: #2557a7;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem;
+  /* border-top-left-radius:30px; */
+  border-top-right-radius:30px;
+  border-left: 20px solid #f27f05;
+}
