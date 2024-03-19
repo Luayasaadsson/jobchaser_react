@@ -40,7 +40,7 @@
   margin: 5px;
   position: absolute;
   right: 1.5%;
-  top: 36%;
+  top: 33%;
   text-align: center;
 }
 
@@ -64,7 +64,7 @@
   margin: 5px;
   position: absolute;
   right: 1.5%;
-  top: 30%;
+  top: 28%;
 }
 
 .jobdescription {
@@ -80,7 +80,7 @@
   font-size: 2rem;
   position: absolute;
   right: 3%;
-  top: -5%;
+  top: -6%;
   margin-top: 100px;
   cursor: pointer;
 }
@@ -88,7 +88,7 @@
 .applybtn {
   position: absolute;
   right: 1%;
-  top: 48%;
+  top: 44%;
   color: #ffffff;
   background-color: #2557a7;
   text-decoration: none;
