@@ -11,8 +11,7 @@ function Nav(): JSX.Element {
       <div className={NavCSS.Navbuttons}> 
         <a href="#" className={NavCSS.Navfavicon}>
           <span className={NavCSS.Navfaviconame}>Favoriter</span>
-          <FontAwesomeIcon icon={faHeart} />
-        </a>
+          <FontAwesomeIcon icon={faHeart} /></a>
         <Link to="/signin" className={NavCSS.Navfavicon}>
           <span className={NavCSS.Navfaviconame}>Logga in</span>
           <FontAwesomeIcon icon={faSignInAlt} />

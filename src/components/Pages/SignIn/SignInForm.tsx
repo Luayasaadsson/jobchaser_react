@@ -1,7 +1,7 @@
-
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import {  Link, useNavigate } from "react-router-dom";
+import {signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from "../../../Firebase/firebase"; 
 
 type FormData = {
     email: string;
@@ -9,6 +9,9 @@ type FormData = {
 };
 
 const SignInForm: React.FC = () => {
+
+    const navigate = useNavigate()
+
     const {
         register,
         handleSubmit,
@@ -16,9 +19,23 @@ const SignInForm: React.FC = () => {
     } = useForm<FormData>();
 
     const formSubmit = (data: FormData) => {
-        console.log("Form Submitted: ", data);
-    };
 
+        console.log("Form Submitted: ", data);
+        const {email, password} = data;
+     
+         signInWithEmailAndPassword(auth, email, password)
+         .then((userCredential) => {
+         // Signed in 
+         const user = userCredential.user;
+         console.log("User signed in: ", user);
+         navigate("/");
+         })
+         .catch((error) => {
+        console.error("Error creating user:", error);
+      });
+     
+    
+      };
     return (
         <>
             <form onSubmit={handleSubmit(formSubmit)}>

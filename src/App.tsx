@@ -1,27 +1,27 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
-import HomePage from "./components/Pages/HomePage";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import HomePage from "./components/Pages/HomePage/HomePage";
 import SignInPage from "./components/Pages/SignIn/SignInPage";
-import SignUpPage from "./components/Pages/SignUpPage";
-import Dashboard from "./components/Pages/Dashboard";
-import Nav from "./components/Nav/Nav";
-import Search from "./components/Search/search";
-import JobList from "./components/JobList/JobList";
-import Footer from "./components/Footer/Footer";
+import SignUpPage from "./components/Pages/SignUp/SignUpPage";
+import Dashboard from "./components/Pages/Dashboard/Dashboard";
 import { AuthProvider, AuthContext } from "./context/AuthContext";
 import { useContext } from 'react';
 import "./css/index.css";
 import "./css/media.css";
 
-function ProtectedRoute(): JSX.Element {
-  const authContext = useContext(AuthContext);
-  const isAuthenticated: boolean = authContext?.user !== null;
-
-  return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
+interface ProtectedRouteProps {
+  children: React.ReactNode;
 }
 
-function App(): JSX.Element {
-  const [searchTerm, setSearchTerm] = useState<string>("");
+function ProtectedRoute({ children }: ProtectedRouteProps): JSX.Element {
+  const authContext = useContext(AuthContext);
+  const isAuthenticated = authContext?.user !== null;
+
+  return isAuthenticated ? <>{children}</> : <Navigate to="/signin" replace />;
+}
+
+function App() {
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
@@ -30,19 +30,18 @@ function App(): JSX.Element {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <Nav />
-        <Search onSearch={handleSearch} />
-        <main>
-        <JobList searchTerm={searchTerm} />
-        </main>
-        <Footer />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage searchTerm={searchTerm} handleSearch={handleSearch} />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/signin" element={<SignInPage />} />
-          <Route path="/dashboard" element={<ProtectedRoute />}>
-            <Route path="" element={<Dashboard />} />
-          </Route>
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
