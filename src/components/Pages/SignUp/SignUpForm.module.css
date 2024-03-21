@@ -1,0 +1,27 @@
+.signupformspan {
+  display: block;
+  margin: 10px auto;
+}
+
+.signupformsbutton {
+  margin-top: 8px;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(221, 215, 208);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: block;
+}
+
+.signupformsbutton:hover {
+  background-color: #2557a7;
+  color: white;
+}
+
+.signupformslink, .signupformslink:visited, .signupformslink:hover, .signupformslink:active {
+  text-decoration: none; 
+  color: inherit;
+}

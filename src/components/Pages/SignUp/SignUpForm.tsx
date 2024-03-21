@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../Firebase/firebase"; 
 import { createUserWithEmailAndPassword } from "firebase/auth"; 
+import SignUpFormCSS from "./SignUpForm.module.css"
 
 type FormData = {
   email: string;
@@ -37,7 +38,7 @@ function SignUpForm() {
   return (
     <form onSubmit={handleSubmit(formSubmit)}>
       <div>
-        <label htmlFor="email">Email:</label>
+        <label className={SignUpFormCSS.signupformspan} htmlFor="email">Email:</label>
         <input
           id="email"
           type="email"
@@ -53,7 +54,7 @@ function SignUpForm() {
       </div>
 
       <div>
-        <label htmlFor="password">Password:</label>
+        <label className={SignUpFormCSS.signupformspan} htmlFor="password">Password:</label>
         <input
           id="password"
           type="password"
@@ -69,7 +70,7 @@ function SignUpForm() {
       </div>
 
       <div>
-        <label htmlFor="confirmPassword">Confirm Password:</label>
+        <label className={SignUpFormCSS.signupformspan}  htmlFor="confirmPassword">Confirm Password:</label>
         <input
           id="confirmPassword"
           type="password"
@@ -82,8 +83,8 @@ function SignUpForm() {
         {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
       </div>
 
-      <button type="submit">Register</button>
-      <Link to="/signin">Already have an account? Sign In</Link>
+      <button className={SignUpFormCSS.signupformsbutton} type="submit">Register</button>
+      <Link className={SignUpFormCSS.signupformslink} to="/signin">Already have an account? Sign In</Link>
     </form>
   );
 }

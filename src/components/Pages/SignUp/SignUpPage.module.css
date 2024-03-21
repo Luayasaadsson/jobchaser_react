@@ -1,17 +1,27 @@
-/* Css Test */
-/* .container {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
-  background-color: #f0f2f5;
+  background-color: #2557a7;
 }
 
-.signInForm {
+.signUpForm {
   padding: 40px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
-} */
+  height: 350px;
+} 
+
+h2 {
+  margin: 10px auto;
+  font-size: 1.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+}
+

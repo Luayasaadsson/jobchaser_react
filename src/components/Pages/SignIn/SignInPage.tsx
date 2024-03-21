@@ -1,11 +1,11 @@
 import SignInForm from './SignInForm';
-import SignInCSS from "./SignIn.module.css"
+import SignInCSS from "./SignInPage.module.css"
 
 const SignInPage: React.FC = () => {
   return (
     <div className={SignInCSS.container}>
       <div className={SignInCSS.signInForm}>
-        <h1>Sign In</h1>
+        <h2>Sign In</h2>
         <SignInForm />
       </div>
     </div>
