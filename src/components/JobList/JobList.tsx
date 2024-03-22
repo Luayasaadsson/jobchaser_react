@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import JobItem from "../JobItem/JobItem";
-import Loader from "../../Loader";
+import Loader from "../Loader/Loader";
 import JobListCSS from "./JobList.module.css"
 
 interface Job {
