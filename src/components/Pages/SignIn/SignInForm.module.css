@@ -9,14 +9,13 @@
   height: 2rem;
   border-radius: 8px;
   border: none;
-  background-color: rgb(221, 215, 208);
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
 }
 
 .signinformsbutton:hover {
-  background-color: #2557a7;
+  background-color: #388fb1;
   color: white;
 }
 

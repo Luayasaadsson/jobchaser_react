@@ -8,7 +8,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
   margin-bottom: 20px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -29,7 +28,7 @@
 
 .joblocation {
   margin: 5px;
-  color: red;
+  color: inherit;
 }
 
 .jobdurationtitle {
@@ -52,12 +51,12 @@
 
 .joboccupation {
   margin: 5px;
-  color: #2557a7;
+  color: inherit;
 }
 
 .jobemployer {
   margin: 5px;
-  color: #2557a7;
+  color: inherit;
 }
 
 .jobdate {
@@ -76,6 +75,7 @@
 
 .jobbtn {
   background: none;
+  color: inherit;
   border: none;
   font-size: 2rem;
   position: absolute;

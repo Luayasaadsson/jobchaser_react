@@ -1,20 +1,29 @@
-/* Css Test */
+
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; 
-  background-color: #2557a7;
+  flex-direction: column; 
+  justify-content: flex-start;
+  min-height: 100vh;
 }
 
 .signInForm {
+  margin-top: 200px; 
   padding: 40px;
-  background: white;
   border-radius: 8px;
   width: 100%;
   max-width: 400px;
   height: 350px;
+  align-self: center; 
 } 
+
+.light {
+  background-color: #fff; 
+}
+
+.dark {
+  background-color: #2557a7;
+  color: #fff; 
+}
 
 h2 {
   margin: 10px auto;

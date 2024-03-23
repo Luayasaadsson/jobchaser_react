@@ -10,6 +10,46 @@
 
 body {
   font-family: "Dosis", sans-serif; 
+  width: 100wh;
   background-color: #edeaea;
 }
 
+/* Definiera färgschemat för ljus och mörkt läge */
+:root {
+  --background-color-light: #fff;
+  --background-color-dark: #282c34;
+  --text-color-light: #000;
+  --text-color-dark: #fff;
+}
+
+.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-mode .theme-switcher-btn:hover .theme-icon {
+  stroke: #fff;
+  transition: ease-out 1s ;
+}
+
+.theme-switcher-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  z-index: 1;
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
