@@ -1,10 +1,10 @@
-.jobcontainer {
+/* .jobcontainer {
   display: grid;
   grid-template-columns: 1fr auto;
   padding-left: 10px;
-}
+} */
 
-.jobitem {
+/* .jobitem {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,67 +13,68 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-left: 10px solid #2557a7;
   border-radius: 20px; 
-}
+} */
 
-.joblogo {
+/* .joblogo {
   max-width: 6rem;
   max-height: 4rem;
-}
+  background-color: #ffffff;
+} */
 
-.jobheadline {
+/* .jobheadline {
   margin: 5px;
   font-size: 1.2rem;
   font-weight: 600;
 }
-
-.joblocation {
+ */
+/* .joblocation {
   margin: 5px;
   color: inherit;
 }
-
-.jobdurationtitle {
+ */
+/* .jobdurationtitle {
   margin: 5px;
 }
-
-.jobduration {
+ */
+/* .jobduration {
   margin: 5px;
   position: absolute;
   right: 1.5%;
   top: 33%;
   text-align: center;
 }
-
-.jobdescriptiontitle {
+ */
+/* .jobdescriptiontitle {
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
 }
-
-.joboccupation {
+ */
+/* .joboccupation {
   margin: 5px;
   color: inherit;
-}
+} */
 
-.jobemployer {
+ /* .jobemployer {
   margin: 5px;
   color: inherit;
-}
+}  */
 
-.jobdate {
+/* .jobdate {
   margin: 5px;
   position: absolute;
   right: 1.5%;
   top: 28%;
-}
+} */
 
-.jobdescription {
+/* .jobdescription {
   width: 45rem;
   max-height: 10rem;
   overflow: auto;
   margin-top: 30px;
-}
+} */
 
-.jobbtn {
+/* .jobbtn {
   background: none;
   color: inherit;
   border: none;
@@ -83,9 +84,9 @@
   top: -6%;
   margin-top: 100px;
   cursor: pointer;
-}
+} */
 
-.applybtn {
+/* .applybtn {
   position: absolute;
   right: 1%;
   top: 44%;
@@ -98,8 +99,8 @@
   padding: 10px;
   font-size: 1rem;
   text-align: center;
-}
+} */
 
-.applybtnicon {
+/* .applybtnicon {
   padding-right: 8px;
-}
+} */

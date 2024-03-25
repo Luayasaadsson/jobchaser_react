@@ -1,6 +1,6 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
 * {
   padding: 0;
@@ -14,7 +14,6 @@ body {
   background-color: #edeaea;
 }
 
-/* Definiera färgschemat för ljus och mörkt läge */
 :root {
   --background-color-light: #fff;
   --background-color-dark: #282c34;
@@ -25,23 +24,17 @@ body {
 .dark-mode {
   background-color: var(--background-color-dark);
   color: var(--text-color-dark);
+  transition: ease-out 1s;
+}
+
+.light-mode {
+  transition: ease-out 1s;
 }
 
 .dark-mode .theme-switcher-btn:hover .theme-icon {
-  stroke: #fff;
-  transition: ease-out 1s ;
+  stroke: #efe33e;
+  transition: ease-out 1s;
 }
-
-.theme-switcher-btn {
-  cursor: pointer;
-  background: none;
-  border: none;
-  position: absolute;
-  top: 10%;
-  left: 2%;
-  z-index: 1;
-}
-
 
 .sr-only {
   position: absolute;

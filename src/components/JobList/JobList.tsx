@@ -35,6 +35,12 @@ interface JobListProps {
 function JobList({ searchTerm }: JobListProps): JSX.Element {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [jobs, setJobs] = useState<Job[]>([]);
+  const [visibleJobsCount, setVisibleJobsCount] = useState(10);
+
+  const handleLoadMoreJobs = () => {
+    setVisibleJobsCount((prevVisibleJobsCount) => prevVisibleJobsCount + 10);
+  };
+  
 
   const getData = async () => {
     const url =
@@ -72,22 +78,29 @@ function JobList({ searchTerm }: JobListProps): JSX.Element {
   return (
     <ul className={JobListCSS.joblist}>
       {filteredJobs.length > 0 ? (
-        filteredJobs.map((job) => (
-          <JobItem
-            key={job.id}
-            logoUrl={job.logo_url}
-            headline={job.headline}
-            location={job.workplace_address.municipality}
-            duration={job.duration.label}
-            employer={job.employer.name}
-            occupation={job.occupation.label}
-            applicationDeadline={job.application_deadline}
-            descriptionText={job.description.text}
-            applicationUrl={job.application_details.url}
-          />
-        ))
+        filteredJobs
+          .slice(0, visibleJobsCount)
+          .map((job) => (
+            <JobItem
+              key={job.id}
+              logoUrl={job.logo_url}
+              headline={job.headline}
+              location={job.workplace_address.municipality}
+              duration={job.duration.label}
+              employer={job.employer.name}
+              occupation={job.occupation.label}
+              applicationDeadline={job.application_deadline}
+              descriptionText={job.description.text}
+              applicationUrl={job.application_details.url}
+            />
+          ))
       ) : (
         <li>Inga jobb tillgängliga.</li>
+      )}
+      {filteredJobs.length > 0 && visibleJobsCount < filteredJobs.length && (
+        <button className="block m-auto bg-sky-600 rounded-md text-sky-50 p-1 mb-2" onClick={handleLoadMoreJobs}>
+          Ladda fler jobb
+        </button>
       )}
     </ul>
   );

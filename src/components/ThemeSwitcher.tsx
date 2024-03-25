@@ -18,7 +18,7 @@ const ThemeSwitcher = () => {
   );
 
   return (
-    <button className="theme-switcher-btn" onClick={toggleTheme} title="Toggle theme">
+    <button className="theme-switcher-btn cursor-pointer border-none absolute top-28 left-3.5 z-10" onClick={toggleTheme} title="Toggle theme">
       {theme === 'light' ? darkModeSVG : lightModeSVG}
       <span className="sr-only">Byt till {theme === 'light' ? 'mörkt' : 'ljus'} läge</span>
     </button>
