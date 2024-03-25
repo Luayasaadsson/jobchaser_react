@@ -5,15 +5,16 @@ import SignInCSS from "./SignInPage.module.css";
 import { useTheme } from "../../../context/useTheme";
 
 const SignInPage: React.FC = () => {
-  const { theme } = useTheme(); 
+  const { theme } = useTheme();
+
 
   const signInFormClassName = `${SignInCSS.signInForm} ${theme === 'light' ? SignInCSS.light : SignInCSS.dark}`;
 
   return (
-    <div className={SignInCSS.container}>
+    <div className="flex flex-col">
       <Nav />
       <div className={signInFormClassName}>
-        <h2>Sign In</h2>
+        <h2 className='font-semibold'>Sign In</h2>
         <SignInForm />
       </div>
     </div>

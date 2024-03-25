@@ -98,7 +98,7 @@ function JobList({ searchTerm }: JobListProps): JSX.Element {
         <li>Inga jobb tillgängliga.</li>
       )}
       {filteredJobs.length > 0 && visibleJobsCount < filteredJobs.length && (
-        <button className="block m-auto bg-sky-600 rounded-md text-sky-50 p-1 mb-2" onClick={handleLoadMoreJobs}>
+        <button className="block m-auto bg-sky-500 hover:bg-sky-700 rounded-md text-sky-50 p-1 mb-2" onClick={handleLoadMoreJobs}>
           Ladda fler jobb
         </button>
       )}

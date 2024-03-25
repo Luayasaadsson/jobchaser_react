@@ -1,9 +1,9 @@
-.signupformspan {
+/* .signupformspan {
   display: block;
   margin: 10px auto;
-}
+} */
 
-.signupformsbutton {
+/* .signupformsbutton {
   margin-top: 8px;
   width: 5rem;
   height: 2rem;
@@ -14,14 +14,14 @@
   font-weight: 500;
   cursor: pointer;
   display: block;
-}
+} */
 
-.signupformsbutton:hover {
+/* .signupformsbutton:hover {
   background-color: #388fb1;
   color: white;
-}
+} */
 
-.signupformslink, .signupformslink:visited, .signupformslink:hover, .signupformslink:active {
+/* .signupformslink, .signupformslink:visited, .signupformslink:hover, .signupformslink:active {
   text-decoration: none; 
   color: inherit;
-}
+} */

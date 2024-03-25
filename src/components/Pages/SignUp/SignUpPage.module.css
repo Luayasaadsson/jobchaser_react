@@ -1,23 +1,24 @@
 
-.container {
+/* .container {
   display: flex;
   flex-direction: column; 
   justify-content: flex-start;
   min-height: 100vh;
 }
-
+ */
 .signUpForm {
   margin-top: 200px; 
   padding: 40px;
   border-radius: 8px;
   width: 100%;
   max-width: 400px;
-  height: auto;
+  height: 350px;
   align-self: center; 
 }
 
 .light {
-  background-color: #fff;
+  background-color: #2557a7;
+  color: #fff;
 }
 
 .dark {

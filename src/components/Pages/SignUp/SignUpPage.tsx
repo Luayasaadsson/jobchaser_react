@@ -5,16 +5,16 @@ import { useTheme } from "../../../context/useTheme";
 
 
 const SignUpPage: React.FC = () => {
-  const { theme } = useTheme(); // Using the theme context
+  const { theme } = useTheme(); 
 
-  // Conditional class name based on the theme
+
   const signUpFormClassName = `${SignUpCSS.signUpForm} ${theme === 'light' ? SignUpCSS.light : SignUpCSS.dark}`;
 
   return (
-    <div className={SignUpCSS.container}>
+    <div className="flex flex-col">
       <Nav />
       <div className={signUpFormClassName}>
-        <h2>Sign Up</h2>
+        <h2 className='font-semibold'>Sign Up</h2>
         <SignUpForm />
       </div>
     </div>

@@ -1,11 +1,11 @@
 
-.container {
+/* .container {
   display: flex;
   flex-direction: column; 
   justify-content: flex-start;
   min-height: 100vh;
 }
-
+ */
 .signInForm {
   margin-top: 200px; 
   padding: 40px;
@@ -17,17 +17,13 @@
 } 
 
 .light {
-  background-color: #fff; 
+  background-color: #2557a7; 
+  color: #fff;
 }
 
 .dark {
   background-color: #2557a7;
   color: #fff; 
-}
-
-h2 {
-  margin: 10px auto;
-  font-size: 1.5rem;
 }
 
 input {

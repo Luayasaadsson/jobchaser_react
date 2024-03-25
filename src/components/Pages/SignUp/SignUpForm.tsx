@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../Firebase/firebase"; 
 import { createUserWithEmailAndPassword } from "firebase/auth"; 
-import SignUpFormCSS from "./SignUpForm.module.css"
+/* import SignUpFormCSS from "./SignUpForm.module.css" */
 
 type FormData = {
   email: string;
@@ -38,7 +38,7 @@ function SignUpForm() {
   return (
     <form onSubmit={handleSubmit(formSubmit)}>
       <div>
-        <label className={SignUpFormCSS.signupformspan} htmlFor="email">Email:</label>
+        <label className="block mt-2" htmlFor="email">Email:</label>
         <input
           id="email"
           type="email"
@@ -54,7 +54,7 @@ function SignUpForm() {
       </div>
 
       <div>
-        <label className={SignUpFormCSS.signupformspan} htmlFor="password">Password:</label>
+        <label className="block mt-3" htmlFor="password">Password:</label>
         <input
           id="password"
           type="password"
@@ -70,7 +70,7 @@ function SignUpForm() {
       </div>
 
       <div>
-        <label className={SignUpFormCSS.signupformspan}  htmlFor="confirmPassword">Confirm Password:</label>
+        <label className="block mt-3" htmlFor="confirmPassword">Confirm Password:</label>
         <input
           id="confirmPassword"
           type="password"
@@ -83,8 +83,8 @@ function SignUpForm() {
         {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
       </div>
 
-      <button className={SignUpFormCSS.signupformsbutton} type="submit">Register</button>
-      <Link className={SignUpFormCSS.signupformslink} to="/signin">Already have an account? Sign In</Link>
+      <button className="block mt-3 w-20 h-8 rounded-lg border-none font-semibold cursor-pointer bg-gray-500 hover:bg-sky-300 mb-2" type="submit">Register</button>
+      <Link to="/signin">Already have an account? Sign In</Link>
     </form>
   );
 }
