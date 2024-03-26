@@ -1,72 +1,42 @@
 @media (max-width: 1200px) {
-  .search-icon {
-    left: 4%;
+  .theme-icon {
+    margin-top: -10px;
+    margin-left: -15px;
   }
 }
 
 @media (max-width: 1000px) {
-  .search-icon {
-    left: 5%;
-  }
-}
-
-
-
-
-@media (max-width: 768px) {
-  .job-list {
-    width: 95%;
-  }
-
-  .search-btn {
-    right: 20%;
-  }
-
-  .search-icon {
-    left: 6%;
-  }
+  
 }
 
 @media (max-width: 768px) {
-  .search-icon {
-    left: 7%;
+  .Jobchasetitle {
+    color: red;
+  }
+  .theme-icon {
+    margin-top: -40px;
+    margin-left: -15px;
+  }
+
+  h2 {
+    font-size: 0.6rem;
   }
 }
 
 @media (max-width: 570px) {
-  .search-nav {
-    position: relative;
-    width: 76%;
-    height: 3rem;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border: none;
-    font-size: 0.8rem;
-    padding-left: 40px;
-    }
-
-  .search-btn {
-    right: 17%;
-    top: 35%;
-    height: 3rem;
-    width: 4rem;
-  }
-
-  .search-icon {
-    left: 12%;
-  }
-
   h2 {
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
-
+  
   p {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+  }
+  .theme-icon {
+    margin-top: -40px;
+    margin-left: -15px;
   }
 }
 
 @media (max-width: 380px) {
-  .search-icon {
-    left: 12%;
-  }
+
 }

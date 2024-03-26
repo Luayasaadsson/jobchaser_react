@@ -34,9 +34,9 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   }, [searchTerm, onSearch]);
 
   return (
-    <div className="flex items-center relative left-[10%] p-8 w-auto">
+    <div className="flex items-center relative sm:left-[10%] p-8 w-auto">
       <input
-        className="relative w-9/12 h-10 rounded-l-lg border-none text-lg pl-8"
+        className="placeholder relative w-9/12 h-10 rounded-l-lg border-none text-lg pl-8"
         type="text"
         placeholder='Jobbtitel, nyckelord eller företag'
         value={searchTerm}

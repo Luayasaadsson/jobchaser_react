@@ -6,7 +6,7 @@ import NavCSS from "./Nav.module.css";
 function Nav(): JSX.Element {
   return (
     <div className={NavCSS.Navcontainer}>
-      <a href="/" className={`${NavCSS.Jobchasetitle} ${NavCSS.resetButton}`} role="button">
+      <a href="/" className={`${NavCSS.Jobchasertitle} ${NavCSS.resetButton}`} role="button">
         JobChaser
         </a>
       <div className={NavCSS.Navbuttons}> 

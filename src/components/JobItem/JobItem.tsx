@@ -56,24 +56,24 @@ function JobItem({
         <img src={logoUrl} className="max-w-24 max-h-16 bg-white" />
         <h2 className="mt-2 text-1xl">{headline}</h2>
         <p className="m-0 text-red-600">Plats: {location}</p>
-        <p className="m-2 absolute right-2 top-36 text-center"><span className="m-2">Tjänst: <br></br></span> {duration}</p>
+        <p className="m-2 absolute right-2 top-36 text-center text-sm"><span className="m-2 text-sm">Tjänst: <br></br></span> {duration}</p>
         <p className="text-sky-500">{employer}</p>
         <p className="text-sky-500">{occupation}</p>
         <p className="m-2 absolute right-2 top-28">{new Date(applicationDeadline).toLocaleDateString()}</p>
-        <a className="absolute right-1 top-52 text-white bg-blue-500 hover:bg-sky-700 no-underline rounded-lg w-28 h-8 text-center p-1" href={applicationUrl} target="_blank" rel="noopener noreferrer">
+        <a className="absolute right-1 top-52 text-white bg-sky-500 hover:bg-sky-700 no-underline rounded-lg w-28 h-8 text-center p-1" href={applicationUrl} target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon className="pr-1" icon={faArrowUpRightFromSquare} />Ansök här</a>
           <div className="w-10/12 overflow-hidden">
-          <span className="block mt-2 text-sm">Beskrivning:</span> 
+          <span className="block mt-2 text-xs">Beskrivning:</span> 
           {isExpanded ? (
-          <span className="text-sm">{descriptionText}</span>
+          <span className="text-xs">{descriptionText}</span>
           ) : (
-          <span className="text-sm">{trimText(descriptionText, 10)}</span>
+          <span className="text-xs">{trimText(descriptionText, 10)}</span>
           )}
         </div>
         <button onClick={toggleExpanded} className="block mt-3 w-24 h-7 rounded-lg border-none cursor-pointer bg-sky-500 hover:bg-sky-700 mb-2 text-white">
           {isExpanded ? 'Läs mindre' : 'Läs mer'}
         </button>
-        <button className="bg-none border-none text-4xl absolute right-10 top-16 cursor-pointer" onClick={toggleFavorite}>
+        <button className="bg-none border-none text-2xl absolute right-10 top-20 cursor-pointer" onClick={toggleFavorite}>
           <FontAwesomeIcon icon={heartIcon} style={{ color: isFavorite ? 'red' : '' }} />
         </button>
       </li>

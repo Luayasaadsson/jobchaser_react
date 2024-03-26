@@ -46,3 +46,7 @@ body {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+.placeholder {
+  color: black;
+}

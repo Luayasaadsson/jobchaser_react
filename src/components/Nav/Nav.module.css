@@ -10,12 +10,10 @@
   position: sticky;
   top: 0; 
   z-index: 1; 
-  min-width: 800px;
 }
 
-.Jobchasetitle {
+.Jobchasertitle {
   color: #ffffff;
-  background-color: #2557a7;
   font-family: "Charm", cursive;
   font-weight: 700;
   font-size: 3rem;
@@ -41,3 +39,25 @@
   font-size: 0.8rem;
   margin-top: 8px;
 }
+
+@media (max-width: 768px) {
+  .Jobchasertitle {
+    font-size: 2rem; 
+    margin-left: -50px;
+  }
+
+  .Navfavicon {
+    font-size: 1.3rem;
+  }
+  .Navfaviconame {
+    font-size: 0.6rem;
+  }
+
+}
+
+@media (max-width: 570px) {
+  .Jobchasertitle {
+    font-size: 1.5rem;
+  }
+}
+
