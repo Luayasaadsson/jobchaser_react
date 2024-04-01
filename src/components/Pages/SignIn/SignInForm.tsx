@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import {  Link, useNavigate } from "react-router-dom";
 import {signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../../../Firebase/firebase"; 
-/* import SignInFormCSS from "./SignInForm.module.css" */
+import SignInFormCSS from "./SignInForm.module.css"
 
 type FormData = {
     email: string;
@@ -41,7 +41,7 @@ const SignInForm: React.FC = () => {
         <>
             <form onSubmit={handleSubmit(formSubmit)}>
                 <div>
-                    <label className="block mt-2" htmlFor="email">Email:</label>
+                    <label className={SignInFormCSS.signinformspan} htmlFor="email">Email:</label>
                     <input
                         id="email"
                         type="email"
@@ -57,7 +57,7 @@ const SignInForm: React.FC = () => {
                 </div>
 
                 <div>
-                    <label className="block mt-3" htmlFor="password">Password:</label>
+                    <label className={SignInFormCSS.signinformspan} htmlFor="password">Password:</label>
                     <input
                         id="password"
                         type="password"
@@ -72,10 +72,10 @@ const SignInForm: React.FC = () => {
                     {errors.password && <span>{errors.password.message}</span>}
                 </div>
 
-                <button className="mt-3 w-20 h-8 rounded-lg border-none font-semibold cursor-pointer bg-gray-500 hover:bg-sky-300 mb-2" type="submit">Log in</button>
+                <button className={SignInFormCSS.signinformsbutton} type="submit">Log in</button>
             </form>
 
-            <Link className="no-underline text-inherit" to="/signup">Don't have an account? Sign Up</Link>
+            <Link className={SignInFormCSS.signinformslink} to="/signup">Don't have an account? Sign Up</Link>
         </>
     );
 };

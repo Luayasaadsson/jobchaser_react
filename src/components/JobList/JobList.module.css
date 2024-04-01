@@ -3,3 +3,18 @@
   width: 90%;
   margin: 0 auto;
 }
+
+.morejobbtn {
+  display: block;
+  margin: auto;
+  background-color: #2557a7;
+  border-radius: 10px;
+  color: white;
+  padding: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.morejobbtn:hover {
+  background: radial-gradient(circle, #36d1dc, #5b86e5);
+}

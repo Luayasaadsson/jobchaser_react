@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 * {
   padding: 0;
@@ -10,7 +10,7 @@
 
 body {
   font-family: "Dosis", sans-serif; 
-  width: 100wh;
+  width: 100%;
   background-color: #edeaea;
 }
 
@@ -28,11 +28,7 @@ body {
 }
 
 .light-mode {
-  transition: ease-out 1s;
-}
-
-.dark-mode .theme-switcher-btn:hover .theme-icon {
-  stroke: #efe33e;
+  color: var(--text-color-dark);
   transition: ease-out 1s;
 }
 
@@ -45,8 +41,4 @@ body {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-.placeholder {
-  color: black;
 }

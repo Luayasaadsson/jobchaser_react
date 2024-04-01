@@ -4,9 +4,8 @@
   align-items: center;
   padding: 10px;
   padding-left: 5rem;
-  background-color: #2557a7;
-  border-top-right-radius: 50px;
-  border-left: 20px solid #f27f05;
+  background: linear-gradient(45deg, #feb47b, #c43f1e);
+  border-bottom-right-radius: 50px;
   position: sticky;
   top: 0; 
   z-index: 1; 

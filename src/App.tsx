@@ -6,7 +6,7 @@ import SignUpPage from "./components/Pages/SignUp/SignUpPage";
 import Dashboard from "./components/Pages/Dashboard/Dashboard";
 import { AuthProvider, AuthContext } from "./context/AuthContext";
 import { useTheme } from "./context/useTheme"
-import ThemeSwitcher from "./components/ThemeSwitcher";
+import ThemeSwitcher from "./Themeswitcher/ThemeSwitcher";
 import "./css/index.css";
 import "./css/media.css";
 

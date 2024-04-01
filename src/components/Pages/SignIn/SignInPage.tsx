@@ -11,10 +11,10 @@ const SignInPage: React.FC = () => {
   const signInFormClassName = `${SignInCSS.signInForm} ${theme === 'light' ? SignInCSS.light : SignInCSS.dark}`;
 
   return (
-    <div className="flex flex-col">
+    <div className={SignInCSS.container} >
       <Nav />
       <div className={signInFormClassName}>
-        <h2 className='font-semibold'>Sign In</h2>
+        <h2 className={SignInCSS.title}>Sign In</h2>
         <SignInForm />
       </div>
     </div>

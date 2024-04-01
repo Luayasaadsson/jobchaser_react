@@ -11,10 +11,10 @@ const SignUpPage: React.FC = () => {
   const signUpFormClassName = `${SignUpCSS.signUpForm} ${theme === 'light' ? SignUpCSS.light : SignUpCSS.dark}`;
 
   return (
-    <div className="flex flex-col">
+    <div className={SignUpCSS.container}>
       <Nav />
       <div className={signUpFormClassName}>
-        <h2 className='font-semibold'>Sign Up</h2>
+        <h2 className={SignUpCSS.title}>Sign Up</h2>
         <SignUpForm />
       </div>
     </div>

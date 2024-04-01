@@ -1,106 +1,134 @@
-/* .jobcontainer {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  padding-left: 10px;
-} */
-
-/* .jobitem {
+.jobitem {
   position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border-left: 10px solid #2557a7;
+  background: linear-gradient(45deg, #2f7bdf, #eda36a);
+  border-left: 10px solid #efc39f;
   border-radius: 20px; 
-} */
+}
 
-/* .joblogo {
+
+.joblogo {
   max-width: 6rem;
   max-height: 4rem;
-  background-color: #ffffff;
-} */
+}
 
-/* .jobheadline {
+.jobheadline {
   margin: 5px;
   font-size: 1.2rem;
   font-weight: 600;
 }
- */
-/* .joblocation {
+
+.joblocation {
   margin: 5px;
   color: inherit;
 }
- */
-/* .jobdurationtitle {
+
+.jobdurationtitle {
   margin: 5px;
 }
- */
-/* .jobduration {
+
+.jobduration {
   margin: 5px;
   position: absolute;
   right: 1.5%;
-  top: 33%;
+  top: 35%;
   text-align: center;
 }
- */
-/* .jobdescriptiontitle {
-  font-weight: bold;
+
+.jobdescriptiontitle {
   display: block;
   margin-bottom: 5px;
 }
- */
-/* .joboccupation {
+
+.joboccupation {
   margin: 5px;
   color: inherit;
-} */
+}
 
- /* .jobemployer {
+ .jobemployer {
   margin: 5px;
   color: inherit;
-}  */
+} 
 
-/* .jobdate {
+.jobdate {
   margin: 5px;
   position: absolute;
   right: 1.5%;
   top: 28%;
-} */
+}
 
-/* .jobdescription {
-  width: 45rem;
+.jobdescription {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25rem;
   max-height: 10rem;
   overflow: auto;
   margin-top: 30px;
-} */
+}
 
-/* .jobbtn {
+.jobdescription1, .jobdescription2 {
+  font-size: 0.8rem;
+}
+
+.jobdescriptiontogglebtn {
+  display: block;
+  background-color: #2557a7;
+  margin-top: 10px;
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.jobdescriptiontogglebtn:hover {
+  background: radial-gradient(circle, #36d1dc, #5b86e5);
+}
+
+.jobbtn {
   background: none;
   color: inherit;
   border: none;
   font-size: 2rem;
   position: absolute;
   right: 3%;
-  top: -6%;
+  top: -18%;
   margin-top: 100px;
   cursor: pointer;
-} */
+}
 
-/* .applybtn {
+.applybtn {
   position: absolute;
   right: 1%;
-  top: 44%;
+  top: 50%;
   color: #ffffff;
   background-color: #2557a7;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 120px;
   height: 40px;
   padding: 10px;
   font-size: 1rem;
   text-align: center;
-} */
+}
 
-/* .applybtnicon {
+.applybtn:hover {
+  background: radial-gradient(circle, #36d1dc, #5b86e5);
+}
+
+.applybtnicon {
   padding-right: 8px;
-} */
+}
+
+@media (max-width: 768px) {
+  .applybtn {
+    width: 85px;
+    height: 30px;
+    font-size: 0.6rem;
+  }
+}

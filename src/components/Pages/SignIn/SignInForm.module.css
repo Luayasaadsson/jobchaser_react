@@ -1,12 +1,14 @@
-/* .signinformspan {
+.signinformspan {
   display: block;
-  margin: 10px auto;
+  margin: 5px auto;
 }
 
 .signinformsbutton {
   margin-top: 8px;
   width: 5rem;
   height: 2rem;
+  color: white;
+  background-color: #2557a7;
   border-radius: 8px;
   border: none;
   font-size: 1rem;
@@ -15,11 +17,11 @@
 }
 
 .signinformsbutton:hover {
-  background-color: #388fb1;
-  color: white;
+  background: radial-gradient(circle, #36d1dc, #5b86e5);
+  color: black;
 }
 
 .signinformslink, .signinformslink:visited, .signinformslink:hover, .signinformslink:active {
   text-decoration: none; 
   color: inherit;
-} */
+}

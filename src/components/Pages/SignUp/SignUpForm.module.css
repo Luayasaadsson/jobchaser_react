@@ -1,27 +1,28 @@
-/* .signupformspan {
+.signupformspan {
   display: block;
-  margin: 10px auto;
-} */
+  margin: 5px auto;
+}
 
-/* .signupformsbutton {
+.signupformsbutton {
   margin-top: 8px;
   width: 5rem;
   height: 2rem;
   border-radius: 8px;
   border: none;
-  background-color: rgb(221, 215, 208);
+  color: white;
+  background-color: #2557a7;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   display: block;
-} */
+}
 
-/* .signupformsbutton:hover {
-  background-color: #388fb1;
-  color: white;
-} */
+.signupformsbutton:hover {
+  background: radial-gradient(circle, #36d1dc, #5b86e5);
+  color: black;
+}
 
-/* .signupformslink, .signupformslink:visited, .signupformslink:hover, .signupformslink:active {
+.signupformslink, .signupformslink:visited, .signupformslink:hover, .signupformslink:active {
   text-decoration: none; 
   color: inherit;
-} */
+}
