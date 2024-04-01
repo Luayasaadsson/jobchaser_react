@@ -12,7 +12,7 @@
 
 .joblogo {
   max-width: 6rem;
-  max-height: 4rem;
+  max-height: 3rem;
 }
 
 .jobheadline {
@@ -63,7 +63,7 @@
 .jobdescription {
   display: flex;
   flex-wrap: wrap;
-  width: 25rem;
+  width: 30rem;
   max-height: 10rem;
   overflow: auto;
   margin-top: 30px;
@@ -130,5 +130,13 @@
     width: 85px;
     height: 30px;
     font-size: 0.6rem;
+  }
+
+  .jobheadline {
+    font-size: 1rem;
+  }
+
+  .jobdescription {
+    font-size: 0.8rem;
   }
 }
