@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./components/Pages/HomePage/HomePage";
 import SignInPage from "./components/Pages/SignIn/SignInPage";
@@ -22,12 +22,12 @@ function ProtectedRoute({ children }: ProtectedRouteProps): JSX.Element {
 }
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
+  /* const [searchTerm, setSearchTerm] = useState(""); */
   const { theme } = useTheme(); 
 
-  const handleSearch = (term: string) => {
+ /*  const handleSearch = (term: string) => {
     setSearchTerm(term);
-  };
+  }; */
 
   useEffect(() => {
     document.body.className = theme + "-mode";
@@ -38,15 +38,15 @@ function App() {
         <BrowserRouter>
         <ThemeSwitcher />
           <Routes>
-            <Route path="/" element={<HomePage searchTerm={searchTerm} handleSearch={handleSearch} />} />
-            <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/signin" element={<SignInPage />} />
-            <Route
+          <Route path="/" element={<HomePage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route
               path="/dashboard"
               element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
+              <ProtectedRoute>
+              <Dashboard />
+              </ProtectedRoute>
               }
             />
           </Routes>

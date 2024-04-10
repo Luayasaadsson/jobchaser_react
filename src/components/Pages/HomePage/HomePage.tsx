@@ -2,19 +2,16 @@ import Nav from "../../../components/Nav/Nav";
 import Search from "../../../components/Search/search";
 import JobList from "../../../components/JobList/JobList";
 import Footer from "../../../components/Footer/Footer";
+import FilterByCategory from "../../Search/FilterByCategory";
 
-interface HomePageProps {
-  searchTerm: string;
-  handleSearch: (term: string) => void;
-}
-
-const HomePage: React.FC<HomePageProps> = ({ searchTerm, handleSearch }) => {
+const HomePage = () => {
   return (
     <>
       <Nav />
-      <Search onSearch={handleSearch} />
+      <Search />
       <main>
-        <JobList searchTerm={searchTerm} />
+      <FilterByCategory />
+      <JobList />
       </main>
       <Footer />
     </>
