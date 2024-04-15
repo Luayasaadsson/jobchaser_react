@@ -10,10 +10,10 @@
   position: relative;
   width: 76%;
   height: 2.5rem;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   border: none;
-  padding-left: 30px;
+  padding-left: 45px;
   font-size: 1.2rem;
 }
 
@@ -36,7 +36,10 @@
 .searchicon {
   position: absolute;
   font-size: 1.5rem;
-  color: rgb(151, 145, 145);
+  color: black;
+  background-color: orange;
+  padding: 8px;
+  border-radius: 50%;
 }
 
 @media (max-width: 900px) {

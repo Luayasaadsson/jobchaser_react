@@ -1,0 +1,27 @@
+.dropdownContainer {
+  position: absolute;
+  right: 6.5%;
+}
+
+
+.select {
+  padding: 5px 2px;
+  border-radius: 8px;
+  border: 2px solid #0056b3;
+  background-color: white;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+}
+
+.select:hover {
+  border-color: #007bff;
+}
+
+.select:focus {
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}

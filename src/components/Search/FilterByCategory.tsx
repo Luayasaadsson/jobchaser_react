@@ -1,36 +1,38 @@
-import { useDispatch } from 'react-redux';
-import { setSearchTerm } from '../../store/slices/filterSlice';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setSearchTerm } from "../../store/slices/filterSlice";
+import styles from "./FilterByCategory.module.css";
 
 const FilterByCategory = () => {
   const dispatch = useDispatch();
+  const [selectedCategory, setSelectedCategory] = useState("ALLA");
 
   const categories = [
-    'ALLA', 'VÅRD', 'IT', 'HR', 'EKONOMI', 'BANK', 'FINANS', 
-    'JURIDIK', 'KONTOR', 'LÖN', 'MANAGEMENT', 'SÄLJ', 'MARKNAD', 'REACT', 'JAVASCRIPT', 'VUE', 'SVELTE', 'ANGULAR', 'FRONTEND', 'BACKEND', 'TEKNIK'
-  ];  
+    "ALLA", "VÅRD", "IT", "HR", "EKONOMI", "BANK", "FINANS", "JURIDIK", "KONTOR","LÖN", "MANAGEMENT", "SÄLJ", "MARKNAD", "REACT", "JAVASCRIPT", "VUE", "SVELTE","ANGULAR", "FRONTEND", "BACKEND", "TEKNIK",
+  ];
 
-  const handleCategoryClick = (category: string) => {
-  const searchTerm = category === "ALLA" ? "" : category;
+  const handleCategoryChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const newCategory = event.target.value;
+    setSelectedCategory(newCategory);
+    const searchTerm = newCategory === "ALLA" ? "" : newCategory;
     dispatch(setSearchTerm(searchTerm));
   };
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-      {categories.map((category) => (
-        <button 
-          key={category} 
-          onClick={() => handleCategoryClick(category)}
-          style={{
-            padding: '10px',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            border: '1px solid #ccc',
-            background: 'white',
-          }}
-        >
-          {category}
-        </button>
-      ))}
+    <div className={styles.dropdownContainer}>
+      <select
+        value={selectedCategory}
+        onChange={handleCategoryChange}
+        className={styles.select}
+      >
+        {categories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };

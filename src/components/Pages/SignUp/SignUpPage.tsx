@@ -1,14 +1,14 @@
-import SignUpForm from './SignUpForm';
+import SignUpForm from "./SignUpForm";
 import Nav from "../../../components/Nav/Nav";
-import SignUpCSS from "./SignUpPage.module.css"
+import SignUpCSS from "./SignUpPage.module.css";
 import { useTheme } from "../../../context/useTheme";
 
-
 const SignUpPage: React.FC = () => {
-  const { theme } = useTheme(); 
+  const { theme } = useTheme();
 
-
-  const signUpFormClassName = `${SignUpCSS.signUpForm} ${theme === 'light' ? SignUpCSS.light : SignUpCSS.dark}`;
+  const signUpFormClassName = `${SignUpCSS.signUpForm} ${
+    theme === "light" ? SignUpCSS.light : SignUpCSS.dark
+  }`;
 
   return (
     <div className={SignUpCSS.container}>
@@ -19,6 +19,6 @@ const SignUpPage: React.FC = () => {
       </div>
     </div>
   );
-}
+};
 
 export default SignUpPage;

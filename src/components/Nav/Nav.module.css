@@ -2,26 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  padding-left: 5rem;
-  background: linear-gradient(45deg, #feb47b, #c43f1e);
+  /*   background: linear-gradient(45deg, #feb47b, #c43f1e); */
   border-bottom-right-radius: 50px;
-  position: sticky;
-  top: 0; 
-  z-index: 1; 
+  top: 0;
+  z-index: 1;
 }
 
-.Jobchasertitle {
-  color: #ffffff;
-  font-family: "Charm", cursive;
-  font-weight: 700;
-  font-size: 3rem;
-  border-bottom: 1px solid #ffffff;
-  text-decoration: none;
+.logoImage {
+  width: 150px;
 }
 
 .Navbuttons {
-  display: flex; 
+  display: flex;
 }
 
 .Navfavicon {
@@ -29,8 +21,8 @@
   flex-direction: column-reverse;
   align-items: center;
   color: #ffffff;
-  text-decoration: none; 
-  margin-right: 40px; 
+  text-decoration: none;
+  margin-right: 40px;
   font-size: 1.5rem;
 }
 
@@ -41,7 +33,7 @@
 
 @media (max-width: 768px) {
   .Jobchasertitle {
-    font-size: 2rem; 
+    font-size: 2rem;
     margin-left: -50px;
   }
 
@@ -51,7 +43,6 @@
   .Navfaviconame {
     font-size: 0.6rem;
   }
-
 }
 
 @media (max-width: 570px) {
@@ -59,4 +50,3 @@
     font-size: 1.5rem;
   }
 }
-

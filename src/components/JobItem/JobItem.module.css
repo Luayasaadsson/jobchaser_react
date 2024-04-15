@@ -6,9 +6,9 @@
   padding: 20px;
   background: linear-gradient(45deg, #2f7bdf, #eda36a);
   border-left: 10px solid #efc39f;
-  border-radius: 20px; 
+  border-radius: 20px;
+  margin-top: 40px;
 }
-
 
 .joblogo {
   max-width: 6rem;
@@ -48,10 +48,10 @@
   color: inherit;
 }
 
- .jobemployer {
+.jobemployer {
   margin: 5px;
   color: inherit;
-} 
+}
 
 .jobdate {
   margin: 5px;
@@ -69,7 +69,8 @@
   margin-top: 30px;
 }
 
-.jobdescription1, .jobdescription2 {
+.jobdescription1,
+.jobdescription2 {
   font-size: 0.8rem;
 }
 
@@ -94,7 +95,7 @@
   background: none;
   color: inherit;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   position: absolute;
   right: 3%;
   top: -18%;

@@ -13,7 +13,9 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const [user, setUser] = useState<{ name: string; email: string } | null>(null);
+  const [user, setUser] = useState<{ name: string; email: string } | null>(
+    null
+  );
 
   const signIn = (mockUser: { name: string; email: string }) => {
     setUser(mockUser); // Simulate a user signing in with mock data

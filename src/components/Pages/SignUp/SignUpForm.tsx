@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../../Firebase/firebase"; 
-import { createUserWithEmailAndPassword } from "firebase/auth"; 
-import SignUpFormCSS from "./SignUpForm.module.css"
+import { auth } from "../../../Firebase/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import SignUpFormCSS from "./SignUpForm.module.css";
 
 type FormData = {
   email: string;
@@ -11,34 +11,33 @@ type FormData = {
 };
 
 function SignUpForm() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-  
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors }
+    formState: { errors },
   } = useForm<FormData>();
 
   const formSubmit = (data: FormData) => {
     console.log("Form Submitted: ", data);
     createUserWithEmailAndPassword(auth, data.email, data.password)
-    .then(() => {
+      .then(() => {
         // Redirect to a new page after successful form submission
         navigate("/signin");
       })
       .catch((error) => {
         console.error("Error creating user:", error);
       });
-    
-    
   };
 
   return (
     <form onSubmit={handleSubmit(formSubmit)}>
       <div>
-        <label className={SignUpFormCSS.signupformspan} htmlFor="email">Email:</label>
+        <label className={SignUpFormCSS.signupformspan} htmlFor="email">
+          Email:
+        </label>
         <input
           id="email"
           type="email"
@@ -54,7 +53,9 @@ function SignUpForm() {
       </div>
 
       <div>
-        <label className={SignUpFormCSS.signupformspan} htmlFor="password">Password:</label>
+        <label className={SignUpFormCSS.signupformspan} htmlFor="password">
+          Password:
+        </label>
         <input
           id="password"
           type="password"
@@ -70,7 +71,12 @@ function SignUpForm() {
       </div>
 
       <div>
-        <label className={SignUpFormCSS.signupformspan}  htmlFor="confirmPassword">Confirm Password:</label>
+        <label
+          className={SignUpFormCSS.signupformspan}
+          htmlFor="confirmPassword"
+        >
+          Confirm Password:
+        </label>
         <input
           id="confirmPassword"
           type="password"
@@ -80,11 +86,17 @@ function SignUpForm() {
               value === watch("password") || "Passwords do not match",
           })}
         />
-        {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
+        {errors.confirmPassword && (
+          <span>{errors.confirmPassword.message}</span>
+        )}
       </div>
 
-      <button className={SignUpFormCSS.signupformsbutton}  type="submit">Register</button>
-      <Link className={SignUpFormCSS.signupformslink} to="/signin">Already have an account? Sign In</Link>
+      <button className={SignUpFormCSS.signupformsbutton} type="submit">
+        Register
+      </button>
+      <Link className={SignUpFormCSS.signupformslink} to="/signin">
+        Already have an account? Sign In
+      </Link>
     </form>
   );
 }

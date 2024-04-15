@@ -1,11 +1,12 @@
 import { useContext, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./components/Pages/HomePage/HomePage";
+import JobPage from "./components/Pages/JobPage/JobPage";
 import SignInPage from "./components/Pages/SignIn/SignInPage";
 import SignUpPage from "./components/Pages/SignUp/SignUpPage";
 import Dashboard from "./components/Pages/Dashboard/Dashboard";
 import { AuthProvider, AuthContext } from "./context/AuthContext";
-import { useTheme } from "./context/useTheme"
+import { useTheme } from "./context/useTheme";
 import ThemeSwitcher from "./Themeswitcher/ThemeSwitcher";
 import "./css/index.css";
 import "./css/media.css";
@@ -23,9 +24,9 @@ function ProtectedRoute({ children }: ProtectedRouteProps): JSX.Element {
 
 function App() {
   /* const [searchTerm, setSearchTerm] = useState(""); */
-  const { theme } = useTheme(); 
+  const { theme } = useTheme();
 
- /*  const handleSearch = (term: string) => {
+  /*  const handleSearch = (term: string) => {
     setSearchTerm(term);
   }; */
 
@@ -35,22 +36,23 @@ function App() {
 
   return (
     <AuthProvider>
-        <BrowserRouter>
+      <BrowserRouter>
         <ThemeSwitcher />
-          <Routes>
+        <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="jobs" element={<JobPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/signin" element={<SignInPage />} />
           <Route
-              path="/dashboard"
-              element={
+            path="/dashboard"
+            element={
               <ProtectedRoute>
-              <Dashboard />
+                <Dashboard />
               </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </AuthProvider>
   );
 }

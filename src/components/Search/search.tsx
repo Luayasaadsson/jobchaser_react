@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setSearchTerm } from './../../store/slices/filterSlice';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setSearchTerm } from "./../../store/slices/filterSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import SearchCSS from "./Search.module.css";
 
 const Search: React.FC = () => {
   const dispatch = useDispatch();
-  const [term, setTerm] = useState<string>('');
+  const [term, setTerm] = useState<string>("");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newTerm = event.target.value;
@@ -29,8 +29,8 @@ const Search: React.FC = () => {
   // Använder en effekt för att återställa menyn när term blir tom
   // Detta säkerställer att listan återställs även om användaren bara raderar söktermen utan att trycka på sökknappen.
   useEffect(() => {
-    if (term === '') {
-      dispatch(setSearchTerm(''));
+    if (term === "") {
+      dispatch(setSearchTerm(""));
     }
   }, [term, dispatch]);
 
@@ -44,13 +44,14 @@ const Search: React.FC = () => {
         onChange={handleInputChange}
         onKeyPress={handleKeyPress}
       />
-      <button 
-        className={SearchCSS.searchbtn} 
-        onClick={handleSearchClick}
-      >
+      <button className={SearchCSS.searchbtn} onClick={handleSearchClick}>
         Sök
       </button>
-      <FontAwesomeIcon icon={faSearch} className={SearchCSS.searchicon} onClick={handleSearchClick} />
+      <FontAwesomeIcon
+        icon={faSearch}
+        className={SearchCSS.searchicon}
+        onClick={handleSearchClick}
+      />
     </div>
   );
 };

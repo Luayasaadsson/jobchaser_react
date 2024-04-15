@@ -1,0 +1,13 @@
+/* JobPage.module.css */
+.pageContainer {
+  background-image: url('./../../../images/bg12.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 95vh; 
+}
+
+.mainContent {
+  padding: 20px; 
+  color: #fff; 
+}
