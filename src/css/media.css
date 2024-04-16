@@ -9,9 +9,9 @@
 }
 
 @media (max-width: 768px) {
- /*  body {
+  body {
     width: 100vh;
-  } */
+  }
 }
 
 @media (max-width: 500px) {

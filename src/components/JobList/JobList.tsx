@@ -4,6 +4,7 @@ import Loader from "../Loader/Loader";
 import JobListCSS from "./JobList.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "./../../store/store";
+import defaultLogo from './../../images/Jobchaser.png';
 
 interface Job {
   id: string;
@@ -103,7 +104,7 @@ const JobList = (): JSX.Element => {
           .map((job) => (
             <JobItem
               key={job.id}
-              logoUrl={job.logo_url}
+              logoUrl={job.logo_url || defaultLogo}
               headline={job.headline}
               location={job.workplace_address.municipality}
               duration={job.duration.label}

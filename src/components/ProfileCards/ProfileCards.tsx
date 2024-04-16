@@ -22,7 +22,12 @@ const StarDisplay: React.FC<StarDisplayProps> = ({ rating }) => {
   return (
     <div className={styles.starRating}>
       {[...Array(5)].map((_, index) => (
-        <span key={index} className={`${styles.star} ${index < rating ? '' : styles.inactive}`}>★</span>
+        <span
+          key={index}
+          className={`${styles.star} ${index < rating ? "" : styles.inactive}`}
+        >
+          ★
+        </span>
       ))}
     </div>
   );
@@ -38,6 +43,7 @@ const ProfileCards: React.FC<ProfileCardsProps> = ({ reviews }) => {
           key={index}
           className={`${styles.card} ${theme === "dark" ? styles.dark : ""}`}
         >
+          <StarDisplay rating={review.rating} />
           <img
             src={review.avatar}
             alt={review.name}
@@ -58,7 +64,7 @@ const ProfileCards: React.FC<ProfileCardsProps> = ({ reviews }) => {
             >
               {review.text}
             </p>
-            <StarDisplay rating={review.rating} />
+
             <p
               className={`${styles.description} ${
                 theme === "dark" ? styles.dark : ""
