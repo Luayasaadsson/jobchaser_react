@@ -1,12 +1,12 @@
 .pageContainer {
-  background-image: url('./../../../images/bg12.jpg'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url('./../../../images/bgg.jpg');
+  background-size: 100% 780px;
+  background-position: center top;
   background-repeat: no-repeat; 
-  height: 90vh; 
+  overflow-x: hidden; 
 }
 
 .mainContent {
-  padding: 20px; 
-  color: #fff; 
+  padding: 20px;
+  color: #fff;
 }

@@ -12,8 +12,15 @@ import {
 
 function Nav(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
+
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
   };
 
   const menuRef = useRef<HTMLDivElement>(null);
@@ -39,7 +46,6 @@ function Nav(): JSX.Element {
     };
 
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -51,6 +57,7 @@ function Nav(): JSX.Element {
         to="/"
         className={`${NavCSS.Jobchasertitle} ${NavCSS.resetButton}`}
         role="button"
+        onClick={closeMenu}
       >
         <img
           className={NavCSS.logoImage}
@@ -67,15 +74,15 @@ function Nav(): JSX.Element {
         ref={menuRef}
         className={`${NavCSS.Navbuttons} ${isOpen ? NavCSS.open : ""}`}
       >
-        <Link to="/favorites" className={NavCSS.Navicon} onClick={toggleMenu}>
+        <Link to="/favorites" className={NavCSS.Navicon} onClick={closeMenu}>
           <span className={NavCSS.Navfaviconame}>Favoriter</span>
           <FontAwesomeIcon icon={faBookmark} />
         </Link>
-        <Link to="/jobs" className={NavCSS.Navicon} onClick={toggleMenu}>
+        <Link to="/jobs" className={NavCSS.Navicon} onClick={closeMenu}>
           <span className={NavCSS.Navfaviconame}>Lediga jobb</span>
           <FontAwesomeIcon icon={faBriefcase} />
         </Link>
-        <Link to="/signin" className={NavCSS.Navicon} onClick={toggleMenu}>
+        <Link to="/signin" className={NavCSS.Navicon} onClick={closeMenu}>
           <span className={NavCSS.Navfaviconame}>Logga in</span>
           <FontAwesomeIcon icon={faUser} />
         </Link>

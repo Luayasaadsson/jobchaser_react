@@ -3,11 +3,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 interface FilterState {
   searchTerm: string;
   categories: string[];
+  sortOrder: string;
 }
 
 const initialState: FilterState = {
   searchTerm: "",
   categories: [],
+  sortOrder: 'newest',
 };
 
 export const filterSlice = createSlice({
@@ -19,6 +21,9 @@ export const filterSlice = createSlice({
     },
     setCategories: (state, action: PayloadAction<string[]>) => {
       state.categories = action.payload;
+    },
+    setSortOrder(state, action) {
+      state.sortOrder = action.payload;
     },
     addCategory: (state, action: PayloadAction<string>) => {
       if (!state.categories.includes(action.payload)) {
@@ -32,6 +37,6 @@ export const filterSlice = createSlice({
 });
 
 // Lägger även in addCategory och removeCategory för framtida ändringar.
-export const { setSearchTerm, setCategories, addCategory, removeCategory } = filterSlice.actions;
+export const { setSearchTerm, setCategories, setSortOrder, addCategory, removeCategory } = filterSlice.actions;
 
 export default filterSlice.reducer;

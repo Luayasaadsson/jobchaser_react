@@ -50,10 +50,10 @@ const HomePage = () => {
             Vi hjälper dig att hitta ditt{" "}
             <span className={styles.jobspan}>drömjobb!</span>
           </h1>
-          <p className={styles.description}>
-            Hitta ditt drömjobb hos oss. Utforska tusentals jobbmöjligheter över
+          <h2 className={styles.description}>
+            Hitta ditt drömjobb hos oss. Utforska <span className={styles.jobspan}>tusentals jobbmöjligheter</span> över
             hela världen.
-          </p>
+          </h2>
         </div>
       </div>
       <ProfileCards reviews={reviews} />

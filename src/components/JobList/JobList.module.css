@@ -18,3 +18,64 @@
 .morejobbtn:hover {
   background: radial-gradient(circle, #36d1dc, #5b86e5);
 }
+
+.sortButtonsContainer {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-left: 50px;
+  
+}
+
+.sortButton {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif ;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.sortButton::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #feb47b, #c43f1e);
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sortButton:hover::after,
+.active::after {
+  width: 100%;
+  left: 0; 
+  transform: translateX(0%); 
+}
+
+.sortButton:not(.active):hover::after {
+  width: 0;
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+.active {
+  color: #feb47b;
+}
+
+.active::after {
+  background: #feb47b; 
+}
+
+@media (max-width: 768px) {
+
+  .sortButton {
+    font-size: 10px;
+  }
+}

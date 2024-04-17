@@ -25,7 +25,7 @@
   flex-direction: column-reverse;
   background: linear-gradient(45deg, #feb47b, #c43f1e);
   padding: 25px;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 200px;
   transform: translateY(0%); 
   gap: 20px;
