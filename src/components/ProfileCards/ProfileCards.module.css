@@ -71,3 +71,9 @@
 .star.inactive {
   color: #e4e5e9;  
 }
+
+@media (max-width: 768px) {
+  .starRating {
+    right: 50%;
+  }
+}

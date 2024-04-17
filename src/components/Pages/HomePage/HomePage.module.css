@@ -1,22 +1,22 @@
 .container {
   position: relative;
-  text-align: center; 
-  height: 950px; 
-  width: 100%; 
-  background-image: url('./../../../images/bgg.jpg'); 
-  background-position: center; 
-  background-size: cover; 
-  z-index: 2; 
+  text-align: center;
+  height: 950px;
+  width: 100%;
+  background-image: url('./../../../images/bgg.jpg');
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
 }
 
 .content {
   position: relative;
-  z-index: 1; 
+  z-index: 1;
 }
 
 .heading {
   font-size: 4rem;
-  margin-top: 30rem;
+  margin-top: 20rem;
 }
 
 .jobspan {
@@ -26,4 +26,34 @@
 .description {
   font-size: 2rem;
   margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 700px; 
+  }
+
+  .heading {
+    font-size: 3rem; 
+    margin-top: 20rem; 
+  }
+
+  .description {
+    font-size: 1.5rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    height: 500px; 
+  }
+
+  .heading {
+    font-size: 2rem; 
+    margin-top: 10rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
 }
