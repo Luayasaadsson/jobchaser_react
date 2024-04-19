@@ -1,8 +1,10 @@
 import { useTheme } from "../context/useTheme";
 import ThemeSwitcherCss from "./ThemeSwitcher.module.css";
 
+// Komponenten ThemeSwitcher använder useTheme-kroken för att hantera och växla mellan teman.
 const ThemeSwitcher = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme(); // Använder useTheme för att få tillgång till nuvarande tema och en funktion för att växla tema.
+
 
   // Light Mode SVG
   const lightModeSVG = (
@@ -43,12 +45,13 @@ const ThemeSwitcher = () => {
   );
 
   return (
+    // Knappen som användaren kan klicka på för att växla mellan ljus och mörk läge.
     <button
       className={ThemeSwitcherCss.themeswitcherbtn}
       onClick={toggleTheme}
       title="Toggle theme"
     >
-      {theme === "light" ? darkModeSVG : lightModeSVG}
+      {theme === "light" ? darkModeSVG : lightModeSVG} {/* Väljer vilken ikon som ska visas baserat på nuvarande tema. */}
       <span className="sr-only">
         Byt till {theme === "light" ? "mörkt" : "ljus"} läge
       </span>

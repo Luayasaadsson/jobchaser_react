@@ -11,19 +11,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Nav(): JSX.Element {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Lokal state för att hålla reda på om menyn är öppen eller stängd.
 
+  // Funktion för att växla mellan att visa eller dölja menyn.
   const toggleMenu = () => {
-    setIsOpen((prev) => !prev);
+    setIsOpen((prev) => !prev); // Invertera isOpen när användaren klickar på hamburgarmenyn.
   };
 
+   // Funktion för att stänga menyn om användaren klickar utanför den.
   const closeMenu = () => {
     if (isOpen) {
       setIsOpen(false);
     }
   };
 
-  const menuRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null); // Referens till menynodet för att kontrollera klick utanför menyn.
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-/* import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"; */
 import { faBookmark as solidBookMark } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark as regularBookMark } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
@@ -28,49 +27,49 @@ function JobItem({
   employer,
   applicationUrl,
 }: JobItemProps): JSX.Element {
+  // Tillstånd för att hantera favoritmarkering.
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
-  /*   const [isExpanded, setIsExpanded] = useState(false);
-   */
+
+  // Funktion för att växla favoritstatus.
   const toggleFavorite = (): void => {
     setIsFavorite((prevState: boolean) => !prevState);
   };
 
-  /*   const toggleExpanded = () => setIsExpanded(!isExpanded); */
-
   const favIcon: IconDefinition = isFavorite ? solidBookMark : regularBookMark;
 
+  // Hanterar klick på favoritknappen.
   const handleFavoriteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation(); // Förhindra att länken aktiveras när favoritknappen klickas
+    e.stopPropagation(); // Förhindrar att länken aktiveras när favoritknappen klickas
     toggleFavorite();
   };
 
-  /*  const trimText = (text: string, limit: number) => {
-    const words = text.split(" ");
-    if (words.length > limit) {
-      return words.slice(0, limit).join(" ") + "...";
-    }
-    return text;
-  }; */
-
   return (
     <div className={JobItemCSS.jobitem}>
+      {/* Länk till jobbansökan */}
       <a href={applicationUrl} className={JobItemCSS.jobitemLink} target="_blank" rel="noopener noreferrer">
+        {/* Logotyp */}
         <div className={JobItemCSS.header}>
           <img src={logoUrl} className={JobItemCSS.joblogo} alt="Logo" />
         </div>
+        {/* Rubrik */}
         <h2 className={JobItemCSS.jobheadline}>{headline}</h2>
       </a>
+      {/* Detaljer */}
       <ul className={JobItemCSS.details}>
+        {/* Plats */}
         <li className={JobItemCSS.joblocation}>
           <FontAwesomeIcon icon={faLocationDot} className={JobItemCSS['jobdate-icon']} />
           {location}
         </li>
+        {/* Arbetsgivare */}
         <li className={JobItemCSS.jobemployer}>{employer}</li>
+        {/* Publiceringsdatum och sista ansökningsdag */}
         <li className={JobItemCSS.jobdate}>
           <FontAwesomeIcon icon={faClock} className={JobItemCSS['jobdate-icon']} />
           Publicerad {new Date().toLocaleDateString("sv-SE")}, Ansök senast {new Date(applicationDeadline).toLocaleDateString("sv-SE")}
         </li>
       </ul>
+      {/* Favoritknapp */}
       <button onClick={handleFavoriteClick} className={JobItemCSS.favoriteBtn}>
         <FontAwesomeIcon icon={favIcon} />
       </button>

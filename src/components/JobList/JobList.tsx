@@ -32,10 +32,10 @@ const JobList = (): JSX.Element => {
   const [activeSort, setActiveSort] = useState<string>('newest');
 
   const handleLoadMoreJobs = () => {
-    setVisibleJobsCount(prev => prev + 10); // Ökar antalet synliga jobb med 10
+    setVisibleJobsCount(prev => prev + 10); // Ökar antalet synliga jobb med 10.
   };
 
-  // Funktion för att hantera sorteringsknapptryck
+  // Funktion för att hantera sorteringsknapptryck.
   const handleSortClick = (sortType: string) => {
     setActiveSort(sortType);
     dispatch(setSortOrder(sortType));
@@ -50,6 +50,7 @@ const JobList = (): JSX.Element => {
           const response = await fetch(url);
           const data = await response.json();
 
+          // Filtrerar jobb baserat på kategorier och sorterar dem enligt den angivna sorteringen.
           const filteredJobs = data.hits.filter((job: Job) =>
             categories.length === 0 || categories.includes(job.occupation.label.toLowerCase())
           );
@@ -80,6 +81,7 @@ const JobList = (): JSX.Element => {
   return (
     <div>
       <div className={JobListCSS.sortButtonsContainer}>
+        {/* Sorteringsknappar för nyaste och äldsta jobb */}
         <button
           className={`${JobListCSS.sortButton} ${activeSort === 'newest' ? JobListCSS.active : ''}`}
           onClick={() => handleSortClick('newest')}
@@ -94,6 +96,7 @@ const JobList = (): JSX.Element => {
         </button>
       </div>
       <ul className={JobListCSS.joblist}>
+        {/* Rendera varje jobb som en JobItem-komponent */}
         {jobs.slice(0, visibleJobsCount).map((job) => (
           <JobItem
             key={job.id}
@@ -108,6 +111,7 @@ const JobList = (): JSX.Element => {
             applicationUrl={job.application_details.url}
           />
         ))}
+        {/* Knapp för att ladda fler jobb om det finns fler jobb än de som visas */}
         {jobs.length > 0 && visibleJobsCount < jobs.length && (
           <button className={JobListCSS.morejobbtn} onClick={handleLoadMoreJobs}>
             Ladda fler jobb
