@@ -42,6 +42,36 @@
   border-radius: 50%;
 }
 
+.searchSuggestionsList {
+  position: absolute;
+  top: 70%;  
+  left: 2;
+  width: 73.7%;
+  height: 10rem;
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
+  border-radius: 10px 0 10px 10px; 
+  overflow-y: auto; 
+  z-index: 10;
+  font-size: 0.8rem;
+}
+
+.searchSuggestionsList li {
+  padding: 10px 20px;
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+.searchSuggestionsList li:hover {
+  background-color: #f1f1f1;
+}
+
+.searchSuggestionsList li:not(:last-child) {
+  border-bottom: 1px solid #e1e1e1; 
+}
+
+
 @media (max-width: 900px) {
   .searchcontainer {
     margin-right: 100px;
