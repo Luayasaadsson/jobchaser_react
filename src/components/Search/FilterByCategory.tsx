@@ -33,7 +33,7 @@ const FilterByCategory = () => {
       >
         {categories.map((category) => (
           <option key={category} value={category}>
-            {category}  // Renderar varje kategori som ett val i dropdown-menyn.
+            {category}
           </option>
         ))}
       </select>
