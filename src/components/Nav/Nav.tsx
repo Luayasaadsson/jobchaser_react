@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import NavCSS from "./Nav.module.css";
@@ -8,6 +9,7 @@ import {
   faBriefcase,
   faUser,
   faBars,
+  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Nav(): JSX.Element {
@@ -15,12 +17,14 @@ function Nav(): JSX.Element {
 
   const menuRef = useRef<HTMLDivElement>(null); // Referens till menynodet för att kontrollera klick utanför menyn.
 
+  const auth = useContext(AuthContext);
+
   // Funktion för att växla mellan att visa eller dölja menyn.
   const toggleMenu = () => {
     setIsOpen((prev) => !prev); // Invertera isOpen när användaren klickar på hamburgarmenyn.
   };
 
-   // Funktion för att stänga menyn om användaren klickar utanför den.
+  // Funktion för att stänga menyn om användaren klickar utanför den.
   const closeMenu = () => {
     if (isOpen) {
       setIsOpen(false);
@@ -58,7 +62,6 @@ function Nav(): JSX.Element {
       <Link
         to="/"
         className={`${NavCSS.Jobchasertitle} ${NavCSS.resetButton}`}
-        role="button"
         onClick={closeMenu}
       >
         <img
@@ -84,10 +87,23 @@ function Nav(): JSX.Element {
           <span className={NavCSS.Navfaviconame}>Lediga jobb</span>
           <FontAwesomeIcon icon={faBriefcase} />
         </Link>
-        <Link to="/signin" className={NavCSS.Navicon} onClick={closeMenu}>
-          <span className={NavCSS.Navfaviconame}>Logga in</span>
-          <FontAwesomeIcon icon={faUser} />
-        </Link>
+        {auth && auth.user ? (
+          <button
+            className={NavCSS.Navicon}
+            onClick={() => {
+              auth.signOut();
+              closeMenu();
+            }}
+          >
+            <span className={NavCSS.Navfaviconame}>Logga ut</span>
+            <FontAwesomeIcon icon={faSignOutAlt} />
+          </button>
+        ) : (
+          <Link to="/signin" className={NavCSS.Navicon} onClick={closeMenu}>
+            <span className={NavCSS.Navfaviconame}>Logga in</span>
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
+        )}
       </div>
     </div>
   );

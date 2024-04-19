@@ -40,6 +40,8 @@
   align-items: center;
   color: #ffffff;
   text-decoration: none;
+  background-color: transparent;
+  border: none;
   margin-right: 40px;
   font-size: 1.5rem;
 }

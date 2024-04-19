@@ -51,10 +51,10 @@
   background-color: #fff;
   color: black;
   box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
-  border-radius: 10px 0 10px 10px; 
+  border-radius: 5px; 
   overflow-y: auto; 
   z-index: 10;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .searchSuggestionsList li {
@@ -97,6 +97,10 @@
     width: 76%;
     height: 2rem;
     padding-left: 34px;
+    font-size: 0.5rem;
+  }
+
+  .searchSuggestionsList {
     font-size: 0.5rem;
   }
 }
