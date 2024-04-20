@@ -220,13 +220,17 @@
 .joblogo {
   width: 50px; 
   height: auto;
+  border-radius: 10px;
 }
 
 .jobheadline {
   font-size: 1rem;
   font-weight: bold;
+  text-decoration: underline;
+}
+
+.jobheadline:hover {
   color: #64eac2;
-  
 }
 
 .details {
@@ -262,6 +266,19 @@
   text-decoration: none;
   color: inherit;
   display: block;
+}
+
+.applyBtn {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  color: #ffffff;
+  padding: 40px;
+  font-size: 0.8rem;
+}
+
+.applyBtn:hover {
+  color: #64eac2;
 }
 
 @media (max-width: 768px) {
@@ -315,5 +332,12 @@
   .favoriteBtn {
     right: 10px; 
     top: 20px;
+  }
+
+  .applyBtn {
+    left: 0;
+    top: 72%;
+    font-size: 0.7rem;
+    margin-left: -20px;
   }
 }

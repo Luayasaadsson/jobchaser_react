@@ -45,13 +45,11 @@ function JobItem({
 
   return (
     <div className={JobItemCSS.jobitem}>
+      <div className={JobItemCSS.header}>
+        <img src={logoUrl} className={JobItemCSS.joblogo} alt="Logo" />
+      </div>
       {/* Länk till jobbansökan */}
       <a href={applicationUrl} className={JobItemCSS.jobitemLink} target="_blank" rel="noopener noreferrer">
-        {/* Logotyp */}
-        <div className={JobItemCSS.header}>
-          <img src={logoUrl} className={JobItemCSS.joblogo} alt="Logo" />
-        </div>
-        {/* Rubrik */}
         <h2 className={JobItemCSS.jobheadline}>{headline}</h2>
       </a>
       {/* Detaljer */}
@@ -73,6 +71,9 @@ function JobItem({
       <button onClick={handleFavoriteClick} className={JobItemCSS.favoriteBtn}>
         <FontAwesomeIcon icon={favIcon} />
       </button>
+      <a href={applicationUrl} className={JobItemCSS.applyBtn} target="_blank" rel="noopener noreferrer">
+        Besök webbplatsen
+      </a>
     </div>
   );
 }
