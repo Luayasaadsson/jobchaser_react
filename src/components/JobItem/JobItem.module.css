@@ -196,7 +196,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(45deg, #eda36a,  #2f7bdf);
+  background: linear-gradient(45deg, #eda36a, #2f7bdf);
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -206,10 +206,9 @@
 }
 
 .jobitem:hover {
-  transform: translateY(-4px); 
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 
 .header {
   position: absolute;
@@ -218,7 +217,7 @@
 }
 
 .joblogo {
-  width: 50px; 
+  width: 50px;
   height: auto;
   border-radius: 10px;
 }
@@ -243,12 +242,12 @@
 
 .details li {
   font-size: 0.6rem;
-  color: #fff; 
+  color: #fff;
   margin: 14px 0;
 }
 
 .jobdate-icon {
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .favoriteBtn {
@@ -258,8 +257,8 @@
   font-size: 1.3rem;
   position: absolute;
   right: 10px;
-  top: 10px; 
-  color:#fff;
+  top: 10px;
+  color: #fff;
 }
 
 .jobitemLink {
@@ -283,20 +282,20 @@
 
 @media (max-width: 768px) {
   .jobitem {
-    padding: 30px; 
-    margin-bottom: 10px; 
+    padding: 30px;
+    margin-bottom: 10px;
   }
 
   .jobheadline {
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
   }
 
   .details p {
-    font-size: 0.5rem; 
+    font-size: 0.5rem;
   }
 
   .header {
-    top: 25%; 
+    top: 25%;
   }
 
   .favoriteBtn {
@@ -306,18 +305,18 @@
 
 @media (max-width: 480px) {
   .jobitem {
-    flex-direction: column; 
+    flex-direction: column;
     padding: 20px;
   }
 
   .jobheadline {
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
   }
 
   .details {
     display: flex;
     flex-direction: column;
-    gap: 1px; 
+    gap: 1px;
   }
 
   .details p {
@@ -325,12 +324,12 @@
   }
 
   .header {
-    position: static; 
-    margin-bottom: 10px; 
+    position: static;
+    margin-bottom: 10px;
   }
 
   .favoriteBtn {
-    right: 10px; 
+    right: 10px;
     top: 20px;
   }
 
