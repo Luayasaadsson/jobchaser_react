@@ -1,8 +1,8 @@
-import { useState } from "react";
+/* import { useState } from "react"; */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+/* import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faBookmark as solidBookMark } from "@fortawesome/free-solid-svg-icons";
-import { faBookmark as regularBookMark } from "@fortawesome/free-regular-svg-icons";
+import { faBookmark as regularBookMark } from "@fortawesome/free-regular-svg-icons"; */
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import JobItemCSS from "./JobItem.module.css";
@@ -28,21 +28,21 @@ function JobItem({
   applicationUrl,
 }: JobItemProps): JSX.Element {
   // Tillstånd för att hantera favoritmarkering.
-  const [isFavorite, setIsFavorite] = useState<boolean>(false);
+/*   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
   // Funktion för att växla favoritstatus.
   const toggleFavorite = (): void => {
     setIsFavorite((prevState: boolean) => !prevState);
-  };
+  }; */
 
-  const favIcon: IconDefinition = isFavorite ? solidBookMark : regularBookMark;
+/*   const favIcon: IconDefinition = isFavorite ? solidBookMark : regularBookMark; */
 
   // Hanterar klick på favoritknappen.
-  const handleFavoriteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+/*   const handleFavoriteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation(); // Förhindrar att länken aktiveras när favoritknappen klickas
     toggleFavorite();
   };
-
+ */
   return (
     <div className={JobItemCSS.jobitem}>
       <div className={JobItemCSS.header}>
@@ -68,9 +68,9 @@ function JobItem({
         </li>
       </ul>
       {/* Favoritknapp */}
-      <button onClick={handleFavoriteClick} className={JobItemCSS.favoriteBtn}>
+      {/* <button onClick={handleFavoriteClick} className={JobItemCSS.favoriteBtn}>
         <FontAwesomeIcon icon={favIcon} />
-      </button>
+      </button> */}
       <a href={applicationUrl} className={JobItemCSS.applyBtn} target="_blank" rel="noopener noreferrer">
         Besök webbplatsen
       </a>

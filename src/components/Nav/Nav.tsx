@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import NavCSS from "./Nav.module.css";
 import logoImage from "./../../images/Jobchaser-logo2.png";
 import {
-  faBookmark,
+  /* faBookmark, */
   faBriefcase,
   faUser,
   faBars,
@@ -79,10 +79,10 @@ function Nav(): JSX.Element {
         ref={menuRef}
         className={`${NavCSS.Navbuttons} ${isOpen ? NavCSS.open : ""}`}
       >
-        <Link to="/favorites" className={NavCSS.Navicon} onClick={closeMenu}>
+        {/* <Link to="/favorites" className={NavCSS.Navicon} onClick={closeMenu}>
           <span className={NavCSS.Navfaviconame}>Favoriter</span>
           <FontAwesomeIcon icon={faBookmark} />
-        </Link>
+        </Link> */}
         <Link to="/jobs" className={NavCSS.Navicon} onClick={closeMenu}>
           <span className={NavCSS.Navfaviconame}>Lediga jobb</span>
           <FontAwesomeIcon icon={faBriefcase} />
